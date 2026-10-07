@@ -3,34 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>마이?�이지 - 골든?�이??/title>
+  <title>마이페이지 - 골든라이프</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=1.4.1">
+  <link rel="stylesheet" href="css/style.css?v=1.4.2">
 </head>
 <body>
   <div class="app-container">
-    <!-- ?�단 ?�더 -->
+    <!-- 상단 헤더 -->
     <header class="app-header">
       <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="index.html" class="back-btn" aria-label="?�로가�?>
+        <a href="index.html" class="back-btn" aria-label="뒤로가기">
           <i class="fa-solid fa-arrow-left"></i>
         </a>
-        <span class="subpage-title">마이?�이지</span>
+        <span class="subpage-title">마이페이지</span>
       </div>
       <div class="header-actions">
-        <button class="font-scale-btn" onclick="toggleFontScale()" title="글???�기 변�?>
+        <button class="font-scale-btn" onclick="toggleFontScale()" title="글자 크기 변경">
           <i class="fa-solid fa-font"></i> 가+
         </button>
-        <button class="header-icon-btn" onclick="showToast('?�정 ?�이지?�니??')" aria-label="?�정">
+        <button class="header-icon-btn" onclick="showToast('설정 페이지입니다.')" aria-label="설정">
           <i class="fa-solid fa-gear"></i>
         </button>
       </div>
     </header>
 
-    <!-- ?�크�?본문 -->
+    <!-- 스크롤 본문 -->
     <main class="content-body">
-      <!-- ?�원 ?�로??카드 -->
+      <!-- 회원 프로필 카드 -->
       <section style="background: linear-gradient(135deg, #2C3328, #1A1F17); border-radius: var(--radius-xl); padding: 24px 20px; color: white; box-shadow: var(--shadow-md);">
         <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
           <div style="width: 64px; height: 64px; border-radius: 50%; background: #5B7F3E; color: white; display: flex; align-items: center; justify-content: center; font-size: 28px; border: 3px solid rgba(255,255,255,0.2);">
@@ -38,146 +38,150 @@
           </div>
           <div>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <h2 style="font-size: 22px; font-weight: 900; margin: 0;">최문???�원??/h2>
+              <h2 style="font-size: 22px; font-weight: 900; margin: 0;">최문영 회원님</h2>
               <span style="background: #6B8F4E; color: #000; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 9999px;">골드 VIP</span>
             </div>
-            <p style="font-size: 13px; color: #94a3b8; margin: 2px 0 0;">010-8842-**** (본인 ?�증 ?�료)</p>
+            <p style="font-size: 13px; color: #94a3b8; margin: 2px 0 0;">010-8842-**** (본인 인증 완료)</p>
           </div>
         </div>
 
         <div style="background: rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 12px 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: center;">
           <div>
-            <div style="font-size: 12px; color: #cbd5e1;">보유 ?�링 ?�인??/div>
+            <div style="font-size: 12px; color: #cbd5e1;">보유 힐링 포인트</div>
             <div style="font-size: 18px; font-weight: 800; color: #6B8F4E;">18,500 P</div>
           </div>
           <div style="border-left: 1px solid rgba(255,255,255,0.15);">
-            <div style="font-size: 12px; color: #cbd5e1;">?�운지 출입�?/div>
-            <div style="font-size: 18px; font-weight: 800; color: #38bdf8;">무제???�스</div>
+            <div style="font-size: 12px; color: #cbd5e1;">라운지 출입권</div>
+            <div style="font-size: 18px; font-weight: 800; color: #38bdf8;">무제한 패스</div>
           </div>
         </div>
       </section>
 
-      <!-- 글???�기 ?��? 조정 카드 -->
+      <!-- 글자 크기 세부 조정 카드 -->
       <section style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 20px 18px; box-shadow: var(--shadow-sm);">
         <h3 style="font-size: 18px; font-weight: 800; color: #2C3328; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-magnifying-glass-plus" style="color: #5B7F3E;"></i> 글???�기 ?�안?�게 조절
+          <i class="fa-solid fa-magnifying-glass-plus" style="color: #5B7F3E;"></i> 글자 크기 편안하게 조절
         </h3>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
           <button onclick="setSpecificScale('default')" id="scaleBtnDefault" style="background: #f8f9fa; border: 1.5px solid #cbd5e1; border-radius: var(--radius-md); padding: 12px 6px; font-size: 15px; font-weight: 700; color: #2C3328; cursor: pointer;">
-            보통 글??          </button>
+            보통 글자
+          </button>
           <button onclick="setSpecificScale('large')" id="scaleBtnLarge" style="background: #f8f9fa; border: 1.5px solid #cbd5e1; border-radius: var(--radius-md); padding: 12px 6px; font-size: 17px; font-weight: 800; color: #2C3328; cursor: pointer;">
-            ??글??          </button>
+            큰 글자
+          </button>
           <button onclick="setSpecificScale('xlarge')" id="scaleBtnXlarge" style="background: #f8f9fa; border: 1.5px solid #cbd5e1; border-radius: var(--radius-md); padding: 12px 6px; font-size: 19px; font-weight: 900; color: #2C3328; cursor: pointer;">
-            ?�주 ?�게
+            아주 크게
           </button>
         </div>
       </section>
 
-      <!-- 최근 ?�약 �??�청 ?�역 -->
+      <!-- 최근 예약 및 신청 내역 -->
       <section>
         <div class="section-header">
-          <h3 class="section-title"><i class="fa-solid fa-clock-rotate-left" style="color: #5B7F3E;"></i> ?�의 ?�약 / 구독 ?�역</h3>
-          <span style="font-size: 13px; color: #64748b;">?�시�??�황</span>
+          <h3 class="section-title"><i class="fa-solid fa-clock-rotate-left" style="color: #5B7F3E;"></i> 나의 예약 / 구독 내역</h3>
+          <span style="font-size: 13px; color: #64748b;">실시간 현황</span>
         </div>
 
         <div id="myOrdersList" style="display: flex; flex-direction: column; gap: 12px;">
-          <!-- 기본 ?�플 주문 -->
+          <!-- 기본 샘플 주문 -->
           <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 18px; box-shadow: var(--shadow-sm);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
               <span style="background: #dcfce7; color: #15803d; font-size: 12px; font-weight: 800; padding: 3px 8px; border-radius: 9999px;">
-                ?�약 ?�정
+                예약 확정
               </span>
               <span style="font-size: 12px; color: #64748b;">GL-884210</span>
             </div>
             <h4 style="font-size: 18px; font-weight: 800; color: #2C3328; margin: 0 0 6px;">
-              ?�운?� ?�리미엄 리조??& 건강 ?�파 ?�키지
+              해운대 프리미엄 리조트 & 건강 스파 패키지
             </h4>
             <p style="font-size: 14px; color: #64748b; margin-bottom: 10px;">
-              2026. 4. 15(?? ~ 4. 16(�? · ?�인 2??(간호 ?�행)
+              2026. 4. 15(수) ~ 4. 16(목) · 성인 2인 (간호 동행)
             </p>
             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #e2e8f0; padding-top: 10px;">
-              <span style="font-size: 15px; font-weight: 800; color: #5B7F3E;">290,000??결제?�료</span>
-              <button onclick="openPhoneModal('?�운?� 리조???�정 변�??�담')" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: #2C3328; cursor: pointer;">
-                ?�정 문의
+              <span style="font-size: 15px; font-weight: 800; color: #5B7F3E;">290,000원 결제완료</span>
+              <button onclick="openPhoneModal('해운대 리조트 일정 변경 상담')" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: #2C3328; cursor: pointer;">
+                일정 문의
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ?�심 비상 ?�락�?-->
+      <!-- 안심 비상 연락망 -->
       <section style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 20px 18px; box-shadow: var(--shadow-sm);">
         <h3 style="font-size: 18px; font-weight: 800; color: #2C3328; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-users-line" style="color: #2563eb;"></i> ?��? �?가�??�심 ?�락�?        </h3>
+          <i class="fa-solid fa-users-line" style="color: #2563eb;"></i> 자녀 및 가족 안심 연락망
+        </h3>
         <p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">
-          ?�행 출발 ?��? ?�급 ?�황 발생 ???�록??보호?�에�??�동?�로 ?�림?�이 ?�송?�니??
+          여행 출발 시와 응급 상황 발생 시 등록된 보호자에게 자동으로 알림톡이 전송됩니다.
         </p>
 
         <div style="background: #f8f9fa; border-radius: var(--radius-md); padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
           <div>
-            <strong style="font-size: 15px; color: #2C3328;">?��? 김지??(보호??</strong>
+            <strong style="font-size: 15px; color: #2C3328;">장녀 김지현 (보호자)</strong>
             <div style="font-size: 13px; color: #64748b;">010-3492-****</div>
           </div>
-          <span style="color: #16a34a; font-size: 13px; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> ?�동 ?�료</span>
+          <span style="color: #16a34a; font-size: 13px; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> 연동 완료</span>
         </div>
 
-        <button onclick="showToast('보호???�락�?추�? ?�록 창이 ?�립?�다.')" style="width: 100%; background: #ffffff; border: 1.5px dashed #cbd5e1; border-radius: 9999px; padding: 12px; font-size: 14px; font-weight: 700; color: #475569; cursor: pointer;">
-          <i class="fa-solid fa-plus"></i> 추�? 비상 ?�락�??�록?�기
+        <button onclick="showToast('보호자 연락망 추가 등록 창이 열립니다.')" style="width: 100%; background: #ffffff; border: 1.5px dashed #cbd5e1; border-radius: 9999px; padding: 12px; font-size: 14px; font-weight: 700; color: #475569; cursor: pointer;">
+          <i class="fa-solid fa-plus"></i> 추가 비상 연락처 등록하기
         </button>
       </section>
 
-      <!-- 1:1 ?�담 매니?� 직통 ?�결 -->
+      <!-- 1:1 전담 매니저 직통 연결 -->
       <section>
         <div class="phone-support-card">
           <div class="phone-support-icon">
             <i class="fa-solid fa-headset"></i>
           </div>
           <div class="phone-support-content">
-            <h4 class="phone-support-title">최문?????�담 케??매니?�</h4>
-            <p class="phone-support-desc">?�수�??�석 간호매니?� 직통 ?�결</p>
-            <button class="phone-support-btn" data-call-support="?�수�??�석 매니?� 직통 ?�담">
-              <i class="fa-solid fa-phone-volume"></i> 1:1 직통 ?�화
+            <h4 class="phone-support-title">최문영 님 전담 케어 매니저</h4>
+            <p class="phone-support-desc">이수진 수석 간호매니저 직통 연결</p>
+            <button class="phone-support-btn" data-call-support="이수진 수석 매니저 직통 상담">
+              <i class="fa-solid fa-phone-volume"></i> 1:1 직통 통화
             </button>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- 고정 ?�단 ??�?(?�·마???�외, ?�심 ?�비??& 중앙 ?�??친구 AI 말동�? -->
+    <!-- 고정 하단 탭 바 (홈·마이 제외, 핵심 서비스 & 중앙 대형 친구 AI 말동무) -->
     <nav class="bottom-nav">
       <a href="travel.html" class="nav-item">
         <i class="fa-solid fa-compass"></i>
-        <span>?�행</span>
+        <span>여행</span>
       </a>
       <a href="dining.html" class="nav-item">
         <i class="fa-solid fa-utensils"></i>
         <span>맛집</span>
       </a>
-      <!-- 중앙 ?�??AI ?�정???�반??말동�? 버튼 (?�각???�림 ?�벽 방�? & ?�뜻??친구 캐릭?? -->
-      <button onclick="openCompanionModal()" class="nav-companion-btn" data-companion-btn title="?�정??말동�?가?�과 ?�?�하�?>
+      <!-- 중앙 대형 AI 다정한 동반자(말동무) 버튼 (사각형 잘림 완벽 방지 & 따뜻한 친구 캐릭터) -->
+      <button onclick="openCompanionModal()" class="nav-companion-btn" data-companion-btn title="다정한 말동무 가온과 대화하기">
         <div class="nav-companion-icon-wrap">
-          <img src="assets/images/companion_face.jpg" alt="말동�?가???�굴" class="companion-nav-face-img">
+          <img src="assets/images/companion_face.jpg" alt="말동무 가온 얼굴" class="companion-nav-face-img">
         </div>
-        <span class="nav-companion-label">AI 말동�?/span>
+        <span class="nav-companion-label">AI 말동무</span>
       </button>
       <a href="care_food.html" class="nav-item">
         <i class="fa-solid fa-bowl-food"></i>
-        <span>케?�푸??/span>
+        <span>케어푸드</span>
       </a>
       <a href="lounge.html" class="nav-item">
         <i class="fa-solid fa-users"></i>
-        <span>?�운지</span>
+        <span>라운지</span>
       </a>
     </nav>
   </div>
 
-  <script src="js/app.js?v=1.4.1"></script>
+  <script src="js/app.js?v=1.4.2"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // ?�트 ?�기 버튼 ?�이?�이??      const savedScale = localStorage.getItem('goldenlife_font_scale') || 'default';
+      // 폰트 크기 버튼 하이라이트
+      const savedScale = localStorage.getItem('goldenlife_font_scale') || 'default';
       updateScaleBtnUI(savedScale);
 
-      // 로컬?�토리�? 주문 목록 로드
+      // 로컬스토리지 주문 목록 로드
       loadMyOrders();
     });
 
@@ -185,7 +189,7 @@
       localStorage.setItem('goldenlife_font_scale', scale);
       applyFontScale(scale);
       updateScaleBtnUI(scale);
-      showToast(`글???�기가 변경되?�습?�다.`);
+      showToast(`글자 크기가 변경되었습니다.`);
     }
 
     function updateScaleBtnUI(scale) {
@@ -217,7 +221,7 @@
               <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 18px; box-shadow: var(--shadow-sm);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                   <span style="background: #dcfce7; color: #15803d; font-size: 12px; font-weight: 800; padding: 3px 8px; border-radius: 9999px;">
-                    ?�약 ?�정
+                    예약 확정
                   </span>
                   <span style="font-size: 12px; color: #64748b;">${o.orderId} (${o.orderDate})</span>
                 </div>
@@ -228,9 +232,9 @@
                   ${o.date} · ${o.party}
                 </p>
                 <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #e2e8f0; padding-top: 10px;">
-                  <span style="font-size: 16px; font-weight: 800; color: #5B7F3E;">${Number(o.price).toLocaleString()}??결제?�료</span>
-                  <button onclick="openPhoneModal('${o.title} ?�정 ?�담')" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: #2C3328; cursor: pointer;">
-                    ?�정 문의
+                  <span style="font-size: 16px; font-weight: 800; color: #5B7F3E;">${Number(o.price).toLocaleString()}원 결제완료</span>
+                  <button onclick="openPhoneModal('${o.title} 일정 상담')" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: #2C3328; cursor: pointer;">
+                    일정 문의
                   </button>
                 </div>
               </div>

@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>?�번 �?맞춤 케???�단 구독 - 골든?�이??/title>
+  <title>이번 주 맞춤 케어 식단 구독 - 골든라이프</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=1.4.1">
+  <link rel="stylesheet" href="css/style.css?v=1.4.2">
 </head>
 <body>
   <div class="app-container" style="padding-bottom: 120px;">
-    <!-- ?�단 ?�더 -->
+    <!-- 상단 헤더 -->
     <header class="app-header">
       <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="index.html" class="back-btn" aria-label="?�로가�?>
+        <a href="index.html" class="back-btn" aria-label="뒤로가기">
           <i class="fa-solid fa-arrow-left"></i>
         </a>
         <div>
           <span class="brand-text" style="font-size: 19px;">Care Food</span>
-          <span class="brand-sub">?�니??맞춤 ?�단</span>
+          <span class="brand-sub">시니어 맞춤 식단</span>
         </div>
       </div>
       <div class="header-actions">
-        <button class="font-scale-btn" onclick="toggleFontScale()" title="글???�기 변�?>
+        <button class="font-scale-btn" onclick="toggleFontScale()" title="글자 크기 변경">
           <i class="fa-solid fa-font"></i> 가+
         </button>
-        <a href="mypage.html" class="header-user-btn" aria-label="최문????마이?�이지">
+        <a href="mypage.html" class="header-user-btn" aria-label="최문영 님 마이페이지">
           <i class="fa-solid fa-user"></i>
-          <span>최문????/span>
+          <span>최문영 님</span>
           <span class="badge-my">마이</span>
         </a>
       </div>
@@ -35,223 +35,226 @@
 
     <!-- 메인 본문 -->
     <main class="content-body">
-      <!-- ?�문 ?�료 ?�인 ?�내 배너 -->
+      <!-- 설문 완료 할인 안내 배너 -->
       <section style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: var(--radius-md); padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
         <i class="fa-solid fa-bell" style="color: #2563eb; font-size: 16px;"></i>
         <div style="font-size: 13px; font-weight: 700; color: #1e40af;">
-          1:1 맞춤 ?�양 ?�문 ?�료 고객?�께 <strong>�?�?30% 즉시 ?�인</strong> ?�용 �?        </div>
+          1:1 맞춤 영양 설문 완료 고객님께 <strong>첫 주 30% 즉시 할인</strong> 적용 중
+        </div>
       </section>
 
-      <!-- ?�트�??�?��? -->
+      <!-- 인트로 타이틀 -->
       <section>
         <h1 style="font-size: 24px; font-weight: 900; color: #2C3328; line-height: 1.3; margin-bottom: 6px;">
-          ?�번 �?맞춤 케???�단
+          이번 주 맞춤 케어 식단
         </h1>
         <p style="font-size: 14px; color: #64748b; margin: 0;">
-          �?�� ?�상?�양?��? ?�텔 ?�프가 공동 개발?�여 5070 ?�니??건강 ?�태??맞춰 ?�기 배송???�립?�다.
+          국내 임상영양사와 호텔 셰프가 공동 개발하여 5070 시니어 건강 상태에 맞춰 정기 배송해 드립니다.
         </p>
       </section>
 
-      <!-- 3?� 건강 ?�터 -->
+      <!-- 3대 건강 필터 -->
       <section class="tag-chips-wrapper">
-        <button class="tag-chip active" onclick="filterMeal('all')"><i class="fa-solid fa-check"></i> ?�체 건강??/button>
-        <button class="tag-chip" onclick="filterMeal('eye')"><i class="fa-solid fa-eye"></i> ?�력/?��? 케??/button>
-        <button class="tag-chip" onclick="filterMeal('muscle')"><i class="fa-solid fa-dumbbell"></i> 마른근육/?�백�?/button>
-        <button class="tag-chip" onclick="filterMeal('bone')"><i class="fa-solid fa-bone"></i> �?관???�??/button>
+        <button class="tag-chip active" onclick="filterMeal('all')"><i class="fa-solid fa-check"></i> 전체 건강식</button>
+        <button class="tag-chip" onclick="filterMeal('eye')"><i class="fa-solid fa-eye"></i> 시력/혈관 케어</button>
+        <button class="tag-chip" onclick="filterMeal('muscle')"><i class="fa-solid fa-dumbbell"></i> 마른근육/단백질</button>
+        <button class="tag-chip" onclick="filterMeal('bone')"><i class="fa-solid fa-bone"></i> 뼈/관절/저염</button>
       </section>
 
-      <!-- ?�품 1: ?�프 조리 ?�?�·당??케?�식 ?�트 -->
+      <!-- 상품 1: 셰프 조리 저염·당뇨 케어식 세트 -->
       <article class="product-card">
         <div class="product-img-wrap">
-          <img src="assets/images/care_meal_thumb.png" alt="?�프 조리 ?�???�뇨 ?�단">
+          <img src="assets/images/care_meal_thumb.png" alt="셰프 조리 저염 당뇨 식단">
           <span class="badge-float-left" style="background: #16a34a; color: white;">
-            <i class="fa-solid fa-award"></i> �??�기구독 30% 지??          </span>
-          <span class="badge-float-bottom">?�벽 ?�선배송 07:00</span>
+            <i class="fa-solid fa-award"></i> 첫 정기구독 30% 지원
+          </span>
+          <span class="badge-float-bottom">새벽 신선배송 07:00</span>
         </div>
         <div class="product-info-wrap">
           <div style="display: flex; flex-wrap: wrap; gap: 6px;">
             <span style="background: #dcfce7; color: #15803d; font-size: 12px; font-weight: 800; padding: 4px 8px; border-radius: 9999px;">
-              ?�?�식 (?�트�?30% 감축)
+              저염식 (나트륨 30% 감축)
             </span>
             <span style="background: #E8F2E0; color: #3D5A2A; font-size: 12px; font-weight: 800; padding: 4px 8px; border-radius: 9999px;">
-              �?3??/ ?�단 5�??�식
+              주 3회 / 식단 5첩 정식
             </span>
             <span style="background: #E0EED8; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 8px; border-radius: 9999px;">
-              1??450kcal 균형??            </span>
+              1인 450kcal 균형식
+            </span>
           </div>
 
-          <h3 class="product-title">?�프 조리 ?�?�·당??케?�식 ?�트</h3>
+          <h3 class="product-title">셰프 조리 저염·당뇨 케어식 세트</h3>
           <p style="font-size: 14px; color: #64748b; line-height: 1.5; margin: 0;">
-            ?�상?�양?��? ?�계??5??컬러 ?�정?�단 (?�어 참깨구이, 귀리잡곡밥, 맑�? 조개 배추�? 계절 채소�????�양 균형 ?�비)
+            임상영양사가 설계한 5색 컬러 한정식단 (연어 참깨구이, 귀리잡곡밥, 맑은 조개 배추국, 계절 채소찜 등 영양 균형 완비)
           </p>
 
           <div class="product-pricing-box">
             <div>
-              <span style="font-size: 13px; color: #64748b; text-decoration: line-through;">19,000??/span>
-              <div style="font-size: 13px; color: #16a34a; font-weight: 800;">첫달 30% ?�택 ?�용가</div>
+              <span style="font-size: 13px; color: #64748b; text-decoration: line-through;">19,000원</span>
+              <div style="font-size: 13px; color: #16a34a; font-weight: 800;">첫달 30% 혜택 적용가</div>
             </div>
-            <div class="pricing-amount">13,500<span>??/ 1??/span></div>
+            <div class="pricing-amount">13,500<span>원 / 1끼</span></div>
           </div>
 
-          <button onclick="showToast('?�번 �??�???�뇨??5�??�세 메뉴?��? ?�렸?�니??')" class="btn-primary-action" style="background: #ffffff; color: #2C3328; border: 1.5px solid #2C3328; min-height: 52px; font-size: 16px;">
-            <i class="fa-solid fa-list-check"></i> ?�번 �?메뉴 ?�단??보기
+          <button onclick="showToast('이번 주 저염 당뇨식 5첩 상세 메뉴표가 열렸습니다.')" class="btn-primary-action" style="background: #ffffff; color: #2C3328; border: 1.5px solid #2C3328; min-height: 52px; font-size: 16px;">
+            <i class="fa-solid fa-list-check"></i> 이번 주 메뉴 식단표 보기
           </button>
         </div>
       </article>
 
-      <!-- ?�품 2: ?�양?�층??& ?�빙 ?�기??주스 ?�키지 -->
+      <!-- 상품 2: 해양심층수 & 웰빙 유기농 주스 패키지 -->
       <article class="product-card">
         <div class="product-img-wrap">
-          <img src="assets/images/wellness_drink_thumb.png" alt="?�양?�층??�??�기??주스 ?�키지">
+          <img src="assets/images/wellness_drink_thumb.png" alt="해양심층수 및 유기농 주스 패키지">
           <span class="badge-float-left" style="background: #0284c7; color: white;">
-            ??��???�분 & 비�?�??�키지
+            항산화 수분 & 비타민 패키지
           </span>
-          <span class="badge-float-bottom">친환�??�리�?10�??�트</span>
+          <span class="badge-float-bottom">친환경 유리병 10병 세트</span>
         </div>
         <div class="product-info-wrap">
           <div style="display: flex; flex-wrap: wrap; gap: 6px;">
             <span style="background: #E0EED8; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 8px; border-radius: 9999px;">
-              100% NFC 무�???착즙
+              100% NFC 무가당 착즙
             </span>
             <span style="background: #E8F2E0; color: #3D5A2A; font-size: 12px; font-weight: 800; padding: 4px 8px; border-radius: 9999px;">
-              무설??· 무색???�심?�료
+              무설탕 · 무색소 안심음료
             </span>
           </div>
 
-          <h3 class="product-title">?�양?�층??& ?�빙 ?�기??주스 ?�트</h3>
+          <h3 class="product-title">해양심층수 & 웰빙 유기농 주스 세트</h3>
           <p style="font-size: 14px; color: #64748b; line-height: 1.5; margin: 0;">
-            ?�해 �?�� ?�양?�층??미네???�터?� 무농??과채�?껍질�??�??착즙???�리미엄 ?�니???�일�?건강?�료 ?�트
+            동해 청정 해양심층수 미네랄 워터와 무농약 과채를 껍질째 저온 착즙한 프리미엄 시니어 데일리 건강음료 세트
           </p>
 
           <div class="product-pricing-box">
-            <span class="pricing-label">�?1???�기구독 ?��?</span>
-            <div class="pricing-amount">35,700<span>??/ 1박스</span></div>
+            <span class="pricing-label">주 1회 정기구독 특가</span>
+            <div class="pricing-amount">35,700<span>원 / 1박스</span></div>
           </div>
 
-          <button onclick="showToast('?�양?�층??주스 ?�분 �??�기???�증?��? ?�인?�었?�니??')" class="btn-primary-action" style="background: #ffffff; color: #2C3328; border: 1.5px solid #2C3328; min-height: 52px; font-size: 16px;">
-            <i class="fa-solid fa-bottle-water"></i> ?��? ?�키지 ?�께 보기
+          <button onclick="showToast('해양심층수 주스 성분 및 유기농 인증서가 확인되었습니다.')" class="btn-primary-action" style="background: #ffffff; color: #2C3328; border: 1.5px solid #2C3328; min-height: 52px; font-size: 16px;">
+            <i class="fa-solid fa-bottle-water"></i> 세부 패키지 함께 보기
           </button>
         </div>
       </article>
 
-      <!-- 배송 주기 ?�택 (?�디???�션) -->
+      <!-- 배송 주기 선택 (라디오 옵션) -->
       <section style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 20px 18px;">
         <h3 style="font-size: 18px; font-weight: 800; color: #2C3328; margin-bottom: 4px;">
-          <i class="fa-solid fa-truck" style="color: #5B7F3E;"></i> 배동 주기 ?�택
+          <i class="fa-solid fa-truck" style="color: #5B7F3E;"></i> 배동 주기 선택
         </h3>
-        <p style="font-size: 13px; color: #64748b; margin-bottom: 14px;">?�제??마이?�이지?�서 ?�유�?�� 건너?�거??변경할 ???�습?�다.</p>
+        <p style="font-size: 13px; color: #64748b; margin-bottom: 14px;">언제든 마이페이지에서 자유롭게 건너뛰거나 변경할 수 있습니다.</p>
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <label style="border: 1.5px solid #e2e8f0; border-radius: var(--radius-md); padding: 14px; display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="updateMealCycle(1)">
             <div style="display: flex; align-items: center; gap: 12px;">
               <input type="radio" name="mealCycle" value="1" style="width: 22px; height: 22px; accent-color: #5B7F3E;">
               <div>
-                <strong style="font-size: 16px; color: #2C3328;">�?1??배송</strong>
-                <p style="font-size: 13px; color: #64748b; margin: 0;">매주 목요???�선 ?�장 배송</p>
+                <strong style="font-size: 16px; color: #2C3328;">주 1회 배송</strong>
+                <p style="font-size: 13px; color: #64748b; margin: 0;">매주 목요일 신선 냉장 배송</p>
               </div>
             </div>
-            <span style="font-size: 14px; font-weight: 700; color: #64748b;">가벼운 ?�작</span>
+            <span style="font-size: 14px; font-weight: 700; color: #64748b;">가벼운 시작</span>
           </label>
 
           <label style="border: 2px solid #5B7F3E; background: #F7FAF5; border-radius: var(--radius-md); padding: 14px; display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="updateMealCycle(2)">
             <div style="display: flex; align-items: center; gap: 12px;">
               <input type="radio" name="mealCycle" value="2" checked style="width: 22px; height: 22px; accent-color: #5B7F3E;">
               <div>
-                <strong style="font-size: 16px; color: #2C3328;">�?2??배송 <span style="background: #16a34a; color: white; font-size: 11px; padding: 2px 6px; border-radius: 9999px;">?�기</span></strong>
-                <p style="font-size: 13px; color: #64748b; margin: 0;">??금요???�침 ?�심 ?�선 배송</p>
+                <strong style="font-size: 16px; color: #2C3328;">주 2회 배송 <span style="background: #16a34a; color: white; font-size: 11px; padding: 2px 6px; border-radius: 9999px;">인기</span></strong>
+                <p style="font-size: 13px; color: #64748b; margin: 0;">화/금요일 아침 안심 신선 배송</p>
               </div>
             </div>
-            <span style="font-size: 14px; font-weight: 800; color: #5B7F3E;">가??추천</span>
+            <span style="font-size: 14px; font-weight: 800; color: #5B7F3E;">가장 추천</span>
           </label>
 
           <label style="border: 1.5px solid #e2e8f0; border-radius: var(--radius-md); padding: 14px; display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="updateMealCycle(3)">
             <div style="display: flex; align-items: center; gap: 12px;">
               <input type="radio" name="mealCycle" value="3" style="width: 22px; height: 22px; accent-color: #5B7F3E;">
               <div>
-                <strong style="font-size: 16px; color: #2C3328;">�?3??배송</strong>
-                <p style="font-size: 13px; color: #64748b; margin: 0;">????�?매일 ?�선?�게 배송</p>
+                <strong style="font-size: 16px; color: #2C3328;">주 3회 배송</strong>
+                <p style="font-size: 13px; color: #64748b; margin: 0;">월/수/금 매일 신선하게 배송</p>
               </div>
             </div>
-            <span style="font-size: 13px; font-weight: 700; color: #2563eb;">?�벽배송 무료</span>
+            <span style="font-size: 13px; font-weight: 700; color: #2563eb;">새벽배송 무료</span>
           </label>
         </div>
       </section>
 
-      <!-- ?�성 주문 ?�내 -->
+      <!-- 음성 주문 안내 -->
       <section>
         <div style="background: #f8f9fa; border: 1.5px dashed #cbd5e1; border-radius: var(--radius-lg); padding: 14px 18px; display: flex; align-items: center; gap: 12px; cursor: pointer;" data-voice-search>
           <div style="width: 44px; height: 44px; border-radius: 50%; background: #2C3328; color: white; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">
             <i class="fa-solid fa-microphone"></i>
           </div>
           <div>
-            <strong style="font-size: 16px; color: #2C3328;">말�??�로 ?�하�?주문?�세??/strong>
-            <p style="font-size: 13px; color: #64748b; margin: 0;">?? "?�번 �??�단?�로 2�??�청?�줘"</p>
+            <strong style="font-size: 16px; color: #2C3328;">말씀으로 편하게 주문하세요</strong>
+            <p style="font-size: 13px; color: #64748b; margin: 0;">예: "이번 주 식단으로 2주 신청해줘"</p>
           </div>
         </div>
       </section>
 
-      <!-- 결제 금액 ?�약 박스 -->
+      <!-- 결제 금액 요약 박스 -->
       <section style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 20px 18px; box-shadow: var(--shadow-sm);">
         <div style="display: flex; justify-content: space-between; font-size: 15px; color: #64748b; margin-bottom: 8px;">
-          <span id="cycleLabel">?�택 ?�단 (�?2??배송)</span>
-          <span id="basePriceText" style="font-weight: 700; color: #2C3328;">40,500??/span>
+          <span id="cycleLabel">선택 식단 (주 2회 배송)</span>
+          <span id="basePriceText" style="font-weight: 700; color: #2C3328;">40,500원</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 15px; color: #dc2626; margin-bottom: 12px;">
-          <span>�????�니???�심 ?�인 (30%)</span>
-          <span id="discountPriceText" style="font-weight: 700;">-12,150??/span>
+          <span>첫 달 시니어 안심 할인 (30%)</span>
+          <span id="discountPriceText" style="font-weight: 700;">-12,150원</span>
         </div>
         <div style="border-top: 1.5px dashed #cbd5e1; padding-top: 12px; display: flex; justify-content: space-between; align-items: baseline;">
-          <span style="font-size: 17px; font-weight: 800; color: #2C3328;">�?�?결제 ?�정??/span>
-          <span id="totalPriceText" style="font-size: 26px; font-weight: 900; color: #5B7F3E;">28,350??/span>
+          <span style="font-size: 17px; font-weight: 800; color: #2C3328;">첫 주 결제 예정액</span>
+          <span id="totalPriceText" style="font-size: 26px; font-weight: 900; color: #5B7F3E;">28,350원</span>
         </div>
       </section>
 
-      <!-- ?�화�??�게 ?�청?�기 -->
+      <!-- 전화로 쉽게 신청하기 -->
       <section style="text-align: center;">
-        <button class="phone-support-btn" data-call-support="?�단 ?�화 주문" style="background: none; border: none; color: #4B5B4A; font-size: 15px; box-shadow: none; padding: 4px;">
-          <i class="fa-solid fa-phone"></i> ?�화 ???�으�??�게 ?�청?�기 <strong>1588-0000</strong>
+        <button class="phone-support-btn" data-call-support="식단 전화 주문" style="background: none; border: none; color: #4B5B4A; font-size: 15px; box-shadow: none; padding: 4px;">
+          <i class="fa-solid fa-phone"></i> 전화 한 통으로 쉽게 신청하기 <strong>1588-0000</strong>
         </button>
-        <p style="font-size: 12px; color: #94a3b8; margin-top: 2px;">(?�일 09:00 ~ 18:00 친절 ?�담 ?�양??직접 ?�담)</p>
+        <p style="font-size: 12px; color: #94a3b8; margin-top: 2px;">(평일 09:00 ~ 18:00 친절 전담 영양사 직접 상담)</p>
       </section>
     </main>
 
-    <!-- 고정 ?�단 결제 버튼 �?-->
+    <!-- 고정 하단 결제 버튼 바 -->
     <div style="position: fixed; bottom: 84px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 500px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 10px 18px; border-top: 1.5px solid #e2e8f0; z-index: 90;">
       <button onclick="startMealSubscription()" class="btn-amber-action" style="width: 100%; font-size: 18px;">
-        <span>구독 ?�작?�기 (�???30% 지??</span>
+        <span>구독 시작하기 (첫 달 30% 지원)</span>
         <i class="fa-solid fa-arrow-right"></i>
       </button>
     </div>
 
-    <!-- 고정 ?�단 ??�?(?�·마???�외, ?�심 ?�비??& 중앙 ?�??친구 AI 말동�? -->
+    <!-- 고정 하단 탭 바 (홈·마이 제외, 핵심 서비스 & 중앙 대형 친구 AI 말동무) -->
     <nav class="bottom-nav">
       <a href="travel.html" class="nav-item">
         <i class="fa-solid fa-compass"></i>
-        <span>?�행</span>
+        <span>여행</span>
       </a>
       <a href="dining.html" class="nav-item">
         <i class="fa-solid fa-utensils"></i>
         <span>맛집</span>
       </a>
-      <!-- 중앙 ?�??AI ?�정???�반??말동�? 버튼 (?�각???�림 ?�벽 방�? & ?�뜻??친구 캐릭?? -->
-      <button onclick="openCompanionModal()" class="nav-companion-btn" data-companion-btn title="?�정??말동�?가?�과 ?�?�하�?>
+      <!-- 중앙 대형 AI 다정한 동반자(말동무) 버튼 (사각형 잘림 완벽 방지 & 따뜻한 친구 캐릭터) -->
+      <button onclick="openCompanionModal()" class="nav-companion-btn" data-companion-btn title="다정한 말동무 가온과 대화하기">
         <div class="nav-companion-icon-wrap">
-          <img src="assets/images/companion_face.jpg" alt="말동�?가???�굴" class="companion-nav-face-img">
+          <img src="assets/images/companion_face.jpg" alt="말동무 가온 얼굴" class="companion-nav-face-img">
         </div>
-        <span class="nav-companion-label">AI 말동�?/span>
+        <span class="nav-companion-label">AI 말동무</span>
       </button>
       <a href="care_food.html" class="nav-item active">
         <i class="fa-solid fa-bowl-food"></i>
-        <span>케?�푸??/span>
+        <span>케어푸드</span>
       </a>
       <a href="lounge.html" class="nav-item">
         <i class="fa-solid fa-users"></i>
-        <span>?�운지</span>
+        <span>라운지</span>
       </a>
     </nav>
   </div>
 
-  <script src="js/app.js?v=1.4.1"></script>
+  <script src="js/app.js?v=1.4.2"></script>
   <script>
     let currentCycle = 2;
     function updateMealCycle(cycle) {
@@ -261,10 +264,10 @@
       const discount = Math.round(base * 0.3);
       const total = base - discount;
 
-      document.getElementById('cycleLabel').innerText = `?�택 ?�단 (�?${cycle}??배송)`;
-      document.getElementById('basePriceText').innerText = base.toLocaleString() + '??;
-      document.getElementById('discountPriceText').innerText = '-' + discount.toLocaleString() + '??;
-      document.getElementById('totalPriceText').innerText = total.toLocaleString() + '??;
+      document.getElementById('cycleLabel').innerText = `선택 식단 (주 ${cycle}회 배송)`;
+      document.getElementById('basePriceText').innerText = base.toLocaleString() + '원';
+      document.getElementById('discountPriceText').innerText = '-' + discount.toLocaleString() + '원';
+      document.getElementById('totalPriceText').innerText = total.toLocaleString() + '원';
     }
 
     function startMealSubscription() {
@@ -274,18 +277,18 @@
       const total = base - discount;
 
       bookProduct({
-        title: `?�프 조리 ?�?�·당??케?�식 ?�트 (�?${currentCycle}??배송)`,
-        category: "?�니???�기 케???�단 구독",
+        title: `셰프 조리 저염·당뇨 케어식 세트 (주 ${currentCycle}회 배송)`,
+        category: "시니어 정기 케어 식단 구독",
         price: total,
         originalPrice: base,
-        date: "매주 ??금요???�침 07:00 ?�선 배송",
-        party: "1???�기 구독 (�???30% 지???�택)",
+        date: "매주 화/금요일 아침 07:00 신선 배송",
+        party: "1인 정기 구독 (첫 달 30% 지원 혜택)",
         image: "assets/images/care_meal_thumb.png"
       });
     }
 
     function filterMeal(type) {
-      showToast(`'${type}' 맞춤 ?�단 ?�터�??�용?�습?�다.`);
+      showToast(`'${type}' 맞춤 식단 필터를 적용했습니다.`);
     }
   </script>
 </body>

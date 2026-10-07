@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>?�성 검???�시?�턴??- 골든?�이??/title>
+  <title>음성 검색 어시스턴트 - 골든라이프</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=1.4.1">
+  <link rel="stylesheet" href="css/style.css?v=1.4.2">
 </head>
 <body>
   <div class="app-container" style="padding-bottom: 30px;">
-    <!-- ?�단 �?-->
+    <!-- 상단 바 -->
     <div class="subpage-topbar">
       <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="index.html" class="back-btn" aria-label="?�로가�?>
+        <a href="index.html" class="back-btn" aria-label="뒤로가기">
           <i class="fa-solid fa-arrow-left"></i>
         </a>
-        <span class="subpage-title">Voice Search ?�시?�턴??/span>
+        <span class="subpage-title">Voice Search 어시스턴트</span>
       </div>
       <div style="display: flex; align-items: center; gap: 8px;">
-        <button class="font-scale-btn" onclick="toggleFontScale()" title="글???�기 변�?>
+        <button class="font-scale-btn" onclick="toggleFontScale()" title="글자 크기 변경">
           <i class="fa-solid fa-font"></i> 가+
         </button>
-        <a href="mypage.html" class="header-icon-btn" aria-label="???�보">
+        <a href="mypage.html" class="header-icon-btn" aria-label="내 정보">
           <i class="fa-solid fa-user"></i>
         </a>
       </div>
@@ -30,24 +30,24 @@
 
     <!-- 메인 본문 -->
     <main class="content-body">
-      <!-- ?�태 ?�디케?�터 -->
+      <!-- 상태 인디케이터 -->
       <section style="display: flex; justify-content: space-between; align-items: center;">
         <div style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 800; color: #16a34a;">
           <i class="fa-solid fa-circle" style="font-size: 10px; animation: pulse-ring 1.5s infinite;"></i>
-          <span id="voiceLiveStatus">?�성 ?�식 준�??�료</span>
+          <span id="voiceLiveStatus">음성 인식 준비 완료</span>
         </div>
         <span style="font-size: 13px; font-weight: 700; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 9999px;">
-          ?�음 ?��?모드 켜짐
+          소음 저감 모드 켜짐
         </span>
       </section>
 
-      <!-- 중앙 마이??& ?�성 ?�형 카드 -->
+      <!-- 중앙 마이크 & 음성 파형 카드 -->
       <section style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-xl); padding: 28px 20px; text-align: center; box-shadow: var(--shadow-md);">
         <div onclick="startListeningFlow()" style="width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(135deg, #5B7F3E, #4A6B32); color: white; display: flex; align-items: center; justify-content: center; font-size: 38px; margin: 0 auto; box-shadow: 0 10px 24px rgba(91, 127, 62, 0.4); cursor: pointer; animation: pulse-ring 2.5s infinite;">
           <i class="fa-solid fa-microphone"></i>
         </div>
 
-        <!-- ?�성 ?�형 -->
+        <!-- 음성 파형 -->
         <div class="voice-waveforms">
           <div class="voice-waveform-bar"></div>
           <div class="voice-waveform-bar"></div>
@@ -58,75 +58,76 @@
         </div>
 
         <h2 id="voiceMainHeading" style="font-size: 22px; font-weight: 900; color: #2C3328; line-height: 1.35; margin-bottom: 6px;">
-          ?�안?�게 말�???주세??<br>귀 기울???�고 ?�습?�다.
+          편안하게 말씀해 주세요.<br>귀 기울여 듣고 있습니다.
         </h2>
         <p style="font-size: 14px; color: #64748b; margin: 0;">
-          ?? "?�음 �??�요?�에 �????�는 ?�천 ?�행 찾아�?
+          예: "다음 주 화요일에 갈 수 있는 온천 여행 찾아줘"
         </p>
       </section>
 
-      <!-- ?�식???�용 카드 -->
+      <!-- 인식된 내용 카드 -->
       <section style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 20px 18px; box-shadow: var(--shadow-sm);">
         <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #16a34a; margin-bottom: 8px;">
           <i class="fa-solid fa-circle-check"></i>
-          <span>?�식???�성 ?�용</span>
+          <span>인식된 음성 내용</span>
         </div>
 
         <div id="recognizedQueryBox" style="font-size: 20px; font-weight: 900; color: #2C3328; line-height: 1.45; margin-bottom: 10px; background: #F7FAF5; border: 1.5px solid #C5DEB5; padding: 14px; border-radius: var(--radius-md);">
-          "경주 1�?2???�풍 구경?�고 ?�명???�정??먹는 코스 ?�려�?
+          "경주 1박 2일 단풍 구경하고 유명한 한정식 먹는 코스 알려줘"
         </div>
 
         <div style="font-size: 13px; color: #64748b; display: flex; justify-content: space-between; align-items: center;">
-          <span>?�식 ?�확??99%</span>
-          <span style="color: #5B7F3E; font-weight: 700;">골든 맞춤 추천 2�??�료</span>
+          <span>인식 정확도 99%</span>
+          <span style="color: #5B7F3E; font-weight: 700;">골든 맞춤 추천 2건 완료</span>
         </div>
       </section>
 
-      <!-- 바로 ?�행???�업 ?�택 -->
+      <!-- 바로 실행할 작업 선택 -->
       <section>
         <div class="section-header">
           <h3 class="section-title" style="font-size: 20px;">
-            <i class="fa-solid fa-wand-magic-sparkles" style="color: #5B7F3E;"></i> 바로 ?�행???�업???�택??주세??          </h3>
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: #5B7F3E;"></i> 바로 실행할 작업을 선택해 주세요
+          </h3>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <!-- ?�업 1 -->
-          <a href="#" onclick="bookProduct({title: '경주 ?�남고택 & 보문?�수 ?�링 1�?2??, category: '경주 가???�풍 ?�링 ?�키지', price: 260000, originalPrice: 320000, date: '2026. 5. 6(?? ~ 5. 7(??', party: '?�인 2??(?�풍 ?�책�??�보 5�?', image: 'assets/images/gyeongju_autumn.jpg'}); return false;" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; box-shadow: var(--shadow-sm);">
+          <!-- 작업 1 -->
+          <a href="#" onclick="bookProduct({title: '경주 황남고택 & 보문호수 힐링 1박 2일', category: '경주 가을 단풍 힐링 패키지', price: 260000, originalPrice: 320000, date: '2026. 5. 6(화) ~ 5. 7(수)', party: '성인 2인 (단풍 산책로 도보 5분)', image: 'assets/images/gyeongju_autumn.jpg'}); return false;" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; box-shadow: var(--shadow-sm);">
             <div style="display: flex; align-items: center; gap: 14px;">
               <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #eff6ff; color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">
                 <i class="fa-solid fa-map-location-dot"></i>
               </div>
               <div>
-                <strong style="font-size: 17px; font-weight: 800; color: #2C3328;">1. '경주 ?�남고택 & 보문?�수 ?�링'</strong>
-                <p style="font-size: 14px; color: #64748b; margin: 2px 0 0;">?�풍 명소 ?�보 5�?· ?�르??맞춤 ?�만 코스</p>
+                <strong style="font-size: 17px; font-weight: 800; color: #2C3328;">1. '경주 황남고택 & 보문호수 힐링'</strong>
+                <p style="font-size: 14px; color: #64748b; margin: 2px 0 0;">단풍 명소 도보 5분 · 어르신 맞춤 완만 코스</p>
               </div>
             </div>
             <i class="fa-solid fa-chevron-right" style="color: #5B7F3E; font-size: 18px;"></i>
           </a>
 
-          <!-- ?�업 2 -->
-          <a href="#" onclick="bookProduct({title: '경주 천년미소 ?�정???�약 (?�선 보양??2??', category: '경주 최고 ?�점 보양 ?�정??, price: 80000, originalPrice: 90000, date: '2026. 5. 6(?? 13:00', party: '?�인 2??(좌식 ?�닌 ?�한 ?�식 ?�이�?', image: 'assets/images/gyeongju_dining.jpg'}); return false;" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; box-shadow: var(--shadow-sm);">
+          <!-- 작업 2 -->
+          <a href="#" onclick="bookProduct({title: '경주 천년미소 한정식 예약 (특선 보양식 2인)', category: '경주 최고 평점 보양 한정식', price: 80000, originalPrice: 90000, date: '2026. 5. 6(화) 13:00', party: '성인 2인 (좌식 아닌 편한 입식 테이블)', image: 'assets/images/gyeongju_dining.jpg'}); return false;" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; box-shadow: var(--shadow-sm);">
             <div style="display: flex; align-items: center; gap: 14px;">
               <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #E8F2E0; color: #5B7F3E; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">
                 <i class="fa-solid fa-utensils"></i>
               </div>
               <div>
-                <strong style="font-size: 17px; font-weight: 800; color: #2C3328;">2. '경주 천년미소 ?�정??</strong>
-                <p style="font-size: 14px; color: #64748b; margin: 2px 0 0;">보문?��? 최고 ?�점 · ?�르???�용 ?�락 좌석</p>
+                <strong style="font-size: 17px; font-weight: 800; color: #2C3328;">2. '경주 천년미소 한정식'</strong>
+                <p style="font-size: 14px; color: #64748b; margin: 2px 0 0;">보문단지 최고 평점 · 어르신 전용 안락 좌석</p>
               </div>
             </div>
             <i class="fa-solid fa-chevron-right" style="color: #5B7F3E; font-size: 18px;"></i>
           </a>
 
-          <!-- ?�업 3: ?�문 ?�담???�화 ?�결 -->
-          <button data-call-support="경주 ?�풍 코스 ?�문 ?�화 ?�담" style="background: #2C3328; border: none; border-radius: var(--radius-lg); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; text-align: left; width: 100%; box-shadow: var(--shadow-md);">
+          <!-- 작업 3: 전문 상담원 전화 연결 -->
+          <button data-call-support="경주 단풍 코스 전문 전화 상담" style="background: #2C3328; border: none; border-radius: var(--radius-lg); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; text-align: left; width: 100%; box-shadow: var(--shadow-md);">
             <div style="display: flex; align-items: center; gap: 14px;">
               <div style="width: 44px; height: 44px; border-radius: 50%; background: #5B7F3E; color: white; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">
                 <i class="fa-solid fa-headset"></i>
               </div>
               <div>
-                <strong style="font-size: 17px; font-weight: 800; color: #ffffff;">3. ?�문 ?�담???�화 ?�결</strong>
-                <p style="font-size: 14px; color: #cbd5e1; margin: 2px 0 0;">?�성 그�?�?친절?�게 ?�정 ?�담 (무료 ?�화)</p>
+                <strong style="font-size: 17px; font-weight: 800; color: #ffffff;">3. 전문 상담원 전화 연결</strong>
+                <p style="font-size: 14px; color: #cbd5e1; margin: 2px 0 0;">음성 그대로 친절하게 일정 상담 (무료 통화)</p>
               </div>
             </div>
             <i class="fa-solid fa-phone" style="color: #6B8F4E; font-size: 20px;"></i>
@@ -134,42 +135,43 @@
         </div>
       </section>
 
-      <!-- ?�식 결과 ?�계 ?�리�?-->
+      <!-- 인식 결과 연계 프리뷰 -->
       <section>
         <div class="section-header">
-          <span style="font-size: 15px; font-weight: 800; color: #2C3328;">?�식 결과 ?�계 ?�리�?/span>
-          <span style="font-size: 13px; font-weight: 700; color: #5B7F3E;">가???�풍 ?�즌 ?�정</span>
+          <span style="font-size: 15px; font-weight: 800; color: #2C3328;">인식 결과 연계 프리뷰</span>
+          <span style="font-size: 13px; font-weight: 700; color: #5B7F3E;">가을 단풍 시즌 한정</span>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
           <div style="background: #ffffff; border-radius: var(--radius-md); overflow: hidden; border: 1.5px solid #e2e8f0;">
-            <img src="assets/images/gyeongju_autumn.jpg" alt="보문?�수 ?�풍 ?�책�? style="width: 100%; height: 110px; object-fit: cover;">
+            <img src="assets/images/gyeongju_autumn.jpg" alt="보문호수 단풍 산책로" style="width: 100%; height: 110px; object-fit: cover;">
             <div style="padding: 10px; font-size: 13px; font-weight: 700; color: #2C3328; text-align: center;">
-              보문?�수 ?�풍 ?�책�?            </div>
+              보문호수 단풍 산책로
+            </div>
           </div>
           <div style="background: #ffffff; border-radius: var(--radius-md); overflow: hidden; border: 1.5px solid #e2e8f0;">
-            <img src="assets/images/gyeongju_dining.jpg" alt="천년미소 보양 ?�식" style="width: 100%; height: 110px; object-fit: cover;">
+            <img src="assets/images/gyeongju_dining.jpg" alt="천년미소 보양 정식" style="width: 100%; height: 110px; object-fit: cover;">
             <div style="padding: 10px; font-size: 13px; font-weight: 700; color: #2C3328; text-align: center;">
-              천년미소 보양 ?�식
+              천년미소 보양 정식
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ?�단 버튼 �?-->
+      <!-- 하단 버튼 바 -->
       <section style="display: flex; gap: 10px; margin-top: 10px;">
         <a href="index.html" class="btn-primary-action" style="flex: 1; background: #f1f5f9; color: #2C3328; border: 1.5px solid #cbd5e1; text-decoration: none; min-height: 56px;">
-          <i class="fa-solid fa-xmark"></i> ?�기
+          <i class="fa-solid fa-xmark"></i> 닫기
         </a>
         <button onclick="startListeningFlow()" class="btn-amber-action" style="flex: 2; min-height: 56px;">
-          <i class="fa-solid fa-microphone"></i> ?�시 말�??�기
+          <i class="fa-solid fa-microphone"></i> 다시 말씀하기
         </button>
       </section>
     </main>
   </div>
 
-  <script src="js/app.js?v=1.4.1"></script>
+  <script src="js/app.js?v=1.4.2"></script>
   <script>
-    // URL ?�라미터가 ?�으�??�당 쿼리�??�스??교체
+    // URL 파라미터가 있으면 해당 쿼리로 텍스트 교체
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
       const q = params.get('q');
@@ -181,8 +183,8 @@
     function startListeningFlow() {
       const heading = document.getElementById('voiceMainHeading');
       const status = document.getElementById('voiceLiveStatus');
-      status.innerText = "?�성???�고 ?�습?�다...";
-      heading.innerHTML = "?�고 ?�습?�다...<br><span style='font-size: 16px; color: #5B7F3E;'>?�안?�게 말�??�세??/span>";
+      status.innerText = "음성을 듣고 있습니다...";
+      heading.innerHTML = "듣고 있습니다...<br><span style='font-size: 16px; color: #5B7F3E;'>편안하게 말씀하세요</span>";
 
       // Web Speech API
       if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
@@ -192,16 +194,16 @@
         rec.onresult = (e) => {
           const val = e.results[0][0].transcript;
           document.getElementById('recognizedQueryBox').innerText = `"${val}"`;
-          status.innerText = "?�성 ?�식 ?�료";
-          heading.innerHTML = "말�??�신 ?�용??찾았?�니??<br><span style='font-size: 16px; color: #16a34a;'>?�하?�는 ??��???�치?�세??/span>";
-          showToast("?�성???�공?�으�??�식?�습?�다.");
+          status.innerText = "음성 인식 완료";
+          heading.innerHTML = "말씀하신 내용을 찾았습니다!<br><span style='font-size: 16px; color: #16a34a;'>원하시는 항목을 터치하세요</span>";
+          showToast("음성을 성공적으로 인식했습니다.");
         };
         try { rec.start(); } catch(e){}
       } else {
         setTimeout(() => {
-          status.innerText = "?�성 ?�식 ?�료";
-          heading.innerHTML = "말�??�신 ?�용??찾았?�니??<br><span style='font-size: 16px; color: #16a34a;'>?�하?�는 ??��???�치?�세??/span>";
-          showToast("?�성 명령???�공?�으�?처리?�었?�니??");
+          status.innerText = "음성 인식 완료";
+          heading.innerHTML = "말씀하신 내용을 찾았습니다!<br><span style='font-size: 16px; color: #16a34a;'>원하시는 항목을 터치하세요</span>";
+          showToast("음성 명령이 성공적으로 처리되었습니다.");
         }, 1500);
       }
     }
