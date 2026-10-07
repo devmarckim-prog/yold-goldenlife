@@ -6,7 +6,7 @@
   <title>마이페이지 - 골든라이프</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=1.4.2">
+  <link rel="stylesheet" href="css/style.css?v=1.5.0">
 </head>
 <body>
   <div class="app-container">
@@ -124,9 +124,12 @@
           <span style="color: #16a34a; font-size: 13px; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> 연동 완료</span>
         </div>
 
-        <button onclick="showToast('보호자 연락망 추가 등록 창이 열립니다.')" style="width: 100%; background: #ffffff; border: 1.5px dashed #cbd5e1; border-radius: 9999px; padding: 12px; font-size: 14px; font-weight: 700; color: #475569; cursor: pointer;">
+        
+        <div id="additionalContactsList" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px;"></div>
+        <button onclick="openAddContactModal()" style="width: 100%; background: #ffffff; border: 1.5px dashed #5B7F3E; border-radius: 9999px; padding: 12px; font-size: 14px; font-weight: 700; color: #5B7F3E; cursor: pointer;">
           <i class="fa-solid fa-plus"></i> 추가 비상 연락처 등록하기
         </button>
+
       </section>
 
       <!-- 1:1 전담 매니저 직통 연결 -->
@@ -174,7 +177,7 @@
     </nav>
   </div>
 
-  <script src="js/app.js?v=1.4.2"></script>
+  <script src="js/app.js?v=1.5.0"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // 폰트 크기 버튼 하이라이트
@@ -245,5 +248,108 @@
       } catch(e) {}
     }
   </script>
+
+  <!-- 비상 연락처 추가 모달 -->
+  <div id="contactModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 10000; align-items: center; justify-content: center; padding: 16px;">
+    <div style="background: white; border-radius: 24px; max-width: 380px; width: 100%; padding: 22px; box-shadow: 0 16px 40px rgba(0,0,0,0.25);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="font-size: 18px; font-weight: 800; color: #2C3328; margin: 0;">
+          <i class="fa-solid fa-user-plus" style="color: #5B7F3E;"></i> 비상 연락처 등록
+        </h3>
+        <button onclick="closeAddContactModal()" style="border: none; background: none; font-size: 20px; color: #64748b; cursor: pointer;">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <p style="font-size: 13px; color: #64748b; margin-bottom: 14px; line-height: 1.4;">
+        응급 시 및 여행 안심 체크인을 수신할 보호자 혹은 자녀분의 연락처를 입력해 주세요.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px;">
+        <div>
+          <label style="font-size: 13px; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">관계 및 성함</label>
+          <input type="text" id="contactNameInput" placeholder="예: 차남 최진우, 배우자 강영숙" style="width: 100%; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 12px; font-size: 15px; outline: none; box-sizing: border-box;">
+        </div>
+        <div>
+          <label style="font-size: 13px; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">휴대폰 번호</label>
+          <input type="tel" id="contactPhoneInput" placeholder="010-1234-5678" style="width: 100%; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 12px; font-size: 15px; outline: none; box-sizing: border-box;">
+        </div>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button onclick="closeAddContactModal()" style="flex: 1; background: #f1f5f9; border: none; border-radius: 14px; padding: 14px; font-size: 15px; font-weight: 700; color: #475569; cursor: pointer;">취소</button>
+        <button onclick="saveContact()" class="btn-primary-action" style="flex: 2; padding: 14px; font-size: 15px; min-height: 48px;">등록 완료</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function renderContacts() {
+      const container = document.getElementById('additionalContactsList');
+      if (!container) return;
+      let contacts = [];
+      try {
+        contacts = JSON.parse(localStorage.getItem('goldenlife_contacts')) || [];
+      } catch(e) {}
+
+      container.innerHTML = contacts.map((c, idx) => `
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong style="font-size: 15px; color: #2C3328;">${c.name}</strong>
+            <div style="font-size: 13px; color: #64748b;">${c.phone}</div>
+          </div>
+          <button onclick="deleteContact(${idx})" style="background: none; border: none; color: #94a3b8; cursor: pointer; padding: 4px 8px;" title="삭제">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function openAddContactModal() {
+      const modal = document.getElementById('contactModal');
+      if (modal) {
+        document.getElementById('contactNameInput').value = '';
+        document.getElementById('contactPhoneInput').value = '';
+        modal.style.display = 'flex';
+      }
+    }
+
+    function closeAddContactModal() {
+      const modal = document.getElementById('contactModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function saveContact() {
+      const name = document.getElementById('contactNameInput').value.trim();
+      const phone = document.getElementById('contactPhoneInput').value.trim();
+      if (!name || !phone) {
+        showToast('성함과 휴대폰 번호를 모두 입력해 주세요.');
+        return;
+      }
+      let contacts = [];
+      try {
+        contacts = JSON.parse(localStorage.getItem('goldenlife_contacts')) || [];
+      } catch(e) {}
+      contacts.push({ name, phone });
+      localStorage.setItem('goldenlife_contacts', JSON.stringify(contacts));
+      renderContacts();
+      closeAddContactModal();
+      showToast('새로운 안심 비상 연락처가 안전하게 등록되었습니다.');
+    }
+
+    function deleteContact(idx) {
+      let contacts = [];
+      try {
+        contacts = JSON.parse(localStorage.getItem('goldenlife_contacts')) || [];
+      } catch(e) {}
+      contacts.splice(idx, 1);
+      localStorage.setItem('goldenlife_contacts', JSON.stringify(contacts));
+      renderContacts();
+      showToast('비상 연락처가 삭제되었습니다.');
+    }
+
+    // 초기 렌더링
+    document.addEventListener('DOMContentLoaded', () => {
+      renderContacts();
+    });
+  </script>
+
 </body>
 </html>

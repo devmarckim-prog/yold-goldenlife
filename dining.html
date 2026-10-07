@@ -6,7 +6,7 @@
   <title>맛집 및 웰니스 - 골든라이프</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=1.4.2">
+  <link rel="stylesheet" href="css/style.css?v=1.5.0">
 </head>
 <body>
   <div class="app-container">
@@ -74,7 +74,7 @@
           <span style="font-size: 13px; color: #64748b;">어르신 선호도 기준</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <a href="#" onclick="showToast('속 편한 한식 맛집 12곳을 정렬했습니다.'); return false;" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none;">
+          <a href="javascript:void(0)" onclick="filterDiningTheme('korean')" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none;">
             <div style="display: flex; align-items: center; gap: 14px;">
               <div style="width: 44px; height: 44px; border-radius: 50%; background: #f1f5f9; color: #2C3328; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-bowl-rice"></i>
@@ -87,7 +87,7 @@
             <i class="fa-solid fa-chevron-right" style="color: #cbd5e1;"></i>
           </a>
 
-          <a href="#" onclick="showToast('기력 회복 보양식 맛집 8곳을 정렬했습니다.'); return false;" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none;">
+          <a href="javascript:void(0)" onclick="filterDiningTheme('stamina')" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none;">
             <div style="display: flex; align-items: center; gap: 14px;">
               <div style="width: 44px; height: 44px; border-radius: 50%; background: #E8F2E0; color: #5B7F3E; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-fire-burner"></i>
@@ -100,7 +100,7 @@
             <i class="fa-solid fa-chevron-right" style="color: #cbd5e1;"></i>
           </a>
 
-          <a href="#" onclick="showToast('가족 모임 전용 룸식당 7곳을 정렬했습니다.'); return false;" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none;">
+          <a href="javascript:void(0)" onclick="filterDiningTheme('family')" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none;">
             <div style="display: flex; align-items: center; gap: 14px;">
               <div style="width: 44px; height: 44px; border-radius: 50%; background: #E0EED8; color: #3D6B35; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-door-open"></i>
@@ -113,7 +113,7 @@
             <i class="fa-solid fa-chevron-right" style="color: #cbd5e1;"></i>
           </a>
 
-          <a href="#" onclick="showToast('천연 온천 & 웰니스 스파 5곳을 정렬했습니다.'); return false;" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none;">
+          <a href="javascript:void(0)" onclick="filterDiningTheme('spa')" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none;">
             <div style="display: flex; align-items: center; gap: 14px;">
               <div style="width: 44px; height: 44px; border-radius: 50%; background: #dcfce7; color: #16a34a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-spa"></i>
@@ -130,14 +130,14 @@
 
       <!-- 필터 칩스 -->
       <section class="tag-chips-wrapper">
-        <button class="tag-chip active"><i class="fa-solid fa-check"></i> 전체 32개</button>
-        <button class="tag-chip" onclick="showToast('엘리베이터가 있는 식당만 표시합니다.')"><i class="fa-solid fa-elevator"></i> 엘리베이터 필수</button>
-        <button class="tag-chip" onclick="showToast('저염식 조리가 가능한 식당만 표시합니다.')"><i class="fa-solid fa-heart"></i> 저염식 가능</button>
-        <button class="tag-chip" onclick="showToast('독립된 개별 룸 식당만 표시합니다.')"><i class="fa-solid fa-door-closed"></i> 개별 룸</button>
+        <button id="diningFilterAll" class="tag-chip active" onclick="filterDining('all', this)"><i class="fa-solid fa-check"></i> 전체 32개</button>
+        <button class="tag-chip" onclick="filterDining('elevator', this)"><i class="fa-solid fa-elevator"></i> 엘리베이터 필수</button>
+        <button class="tag-chip" onclick="filterDining('lowsalt', this)"><i class="fa-solid fa-heart"></i> 저염식 가능</button>
+        <button class="tag-chip" onclick="filterDining('room', this)"><i class="fa-solid fa-door-closed"></i> 개별 룸</button>
       </section>
 
       <!-- 맛집 1: 청담 고운빛 한정식 -->
-      <article class="product-card">
+      <article class="product-card" data-dining-feature="elevator,lowsalt,room" data-theme="korean,family">
         <div class="product-img-wrap">
           <img src="assets/images/korean_dining.jpg" alt="청담 고운빛 한정식">
           <span class="badge-float-left" style="background: #2C3328; color: white;">
@@ -173,7 +173,7 @@
       </article>
 
       <!-- 맛집 2: 수안보 온천수 묵밥 & 황토 찜질 휴양원 -->
-      <article class="product-card">
+      <article class="product-card" data-dining-feature="lowsalt" data-theme="stamina,spa">
         <div class="product-img-wrap">
           <img src="assets/images/suanbo_dining.jpg" alt="수안보 온천 묵밥 휴양원">
           <span class="badge-float-left" style="background: #16a34a; color: white;">
@@ -251,6 +251,68 @@
     </nav>
   </div>
 
-  <script src="js/app.js?v=1.4.2"></script>
+  <script src="js/app.js?v=1.5.0"></script>
+
+  <script>
+    function filterDining(feature, btn) {
+      if (btn) {
+        document.querySelectorAll('.filter-container .tag-chip').forEach(c => {
+          c.classList.remove('active');
+          c.style.backgroundColor = 'var(--surface-bg)';
+          c.style.color = 'var(--text-sub)';
+          c.style.borderColor = 'var(--border-color)';
+        });
+        btn.classList.add('active');
+        btn.style.backgroundColor = 'var(--primary)';
+        btn.style.color = '#ffffff';
+        btn.style.borderColor = 'var(--primary)';
+      }
+
+      const cards = document.querySelectorAll('.product-card[data-dining-feature]');
+      let matchCount = 0;
+      cards.forEach(card => {
+        const features = card.getAttribute('data-dining-feature') || '';
+        if (feature === 'all' || features.includes(feature)) {
+          card.style.display = 'block';
+          matchCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      const names = {
+        all: '전체 식당',
+        elevator: '엘리베이터 완비 식당',
+        lowsalt: '저염 맞춤 식당',
+        room: '단독 룸 구비 식당'
+      };
+      showToast((names[feature] || '선택한 조건') + ' ' + matchCount + '곳이 검색되었습니다.');
+    }
+
+    function filterDiningTheme(theme) {
+      const cards = document.querySelectorAll('.product-card[data-theme]');
+      let matchCount = 0;
+      cards.forEach(card => {
+        const cardTheme = card.getAttribute('data-theme') || '';
+        if (cardTheme === theme) {
+          card.style.display = 'block';
+          matchCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      const themeNames = {
+        korean: '한정식 코스',
+        family: '가족 모임 특화 식당',
+        stamina: '보양식 전문 식당',
+        spa: '편안한 좌석 & 룸 식당'
+      };
+      showToast((themeNames[theme] || '테마') + ' 매장 ' + matchCount + '곳을 표시합니다.');
+      const listEl = document.querySelector('.product-list');
+      if (listEl) {
+        listEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
 </body>
 </html>

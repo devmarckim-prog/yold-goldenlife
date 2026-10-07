@@ -236,14 +236,34 @@ const COMPANION_KNOWLEDGE = [
     action: () => { setTimeout(() => { window.location.href = 'mypage.html'; }, 1500); }
   },
   {
-    triggers: ['글자', '크게', '돋보기', '글씨', '안 보여'],
+    triggers: ['예약', '일정', '결제', '주문하고 싶어', '신청하고 싶어'],
+    response: "문영 님께서 원하시는 맞춤 여행이나 케어 식단을 곧바로 신청하실 수 있도록 예약 화면으로 친절히 안내해 드릴게요.",
+    action: () => { setTimeout(() => { window.location.href = 'travel.html'; }, 1500); }
+  },
+  {
+    triggers: ['홈', '처음', '메인', '첫 화면', '홈으로'],
+    response: "문영 님, 골든라이프 메인 홈 화면으로 모실게요!",
+    action: () => { setTimeout(() => { window.location.href = 'index.html'; }, 1500); }
+  },
+  {
+    triggers: ['글자', '크게', '돋보기', '글씨', '안 보여', '작아', '키워'],
     response: "문영 님, 눈 편안하시도록 글자 크기를 시원하고 큼직하게 키워드렸어요!",
     action: () => { toggleFontScale(); }
   },
   {
-    triggers: ['전화', '상담', '도와줘', '매니저', '사람'],
+    triggers: ['전화', '상담', '도와줘', '매니저', '사람', '연결'],
     response: "문영 님, 다정하고 친절한 전담 상담원(1588-0000)에게 바로 전화 연결해 드릴게요.",
     action: () => { openPhoneModal('말동무 가온의 전화 상담 연결'); }
+  },
+  {
+    triggers: ['건강', '혈압', '혈당', '아파', '피곤', '어지러', '힘들어'],
+    response: "문영 님, 무리하지 마시고 편안한 자세로 깊게 숨을 들이쉬어 보세요. 따뜻한 온수 한 컵 천천히 드시고, 증상이 지속되시면 저희 전담 간호 매니저(1588-0000)와 바로 1:1 상담받으실 수 있어요.",
+    action: null
+  },
+  {
+    triggers: ['자녀', '딸', '아들', '가족', '연락망', '보호자'],
+    response: "문영 님의 든든한 가족 안심 연락망이 마이페이지에 안전하게 연동되어 있어요. 언제든 비상 상황 시 보호자분께 자동 알림톡이 전송됩니다.",
+    action: () => { setTimeout(() => { window.location.href = 'mypage.html'; }, 1500); }
   }
 ];
 
@@ -385,10 +405,14 @@ function triggerCompanionVoice() {
 
 function simulateCompanionVoice() {
   const samples = [
-    "문영 님, 오늘 날씨가 참 좋아요. 산책 어떠세요?",
     "따뜻한 온천 여행 보여줘",
     "저염 건강 식단 신청할래",
-    "글자 크기 좀 크게 키워줘"
+    "글자 크기 좀 크게 키워줘",
+    "상담원 전화 연결해줘",
+    "오늘 기분 좋은 이야기 들려줘",
+    "마음 편해지는 건강차 추천해줘",
+    "어르신 안심 맛집 찾아줘",
+    "시니어 라운지 보여줘"
   ];
   const chosen = samples[Math.floor(Math.random() * samples.length)];
   setTimeout(() => {

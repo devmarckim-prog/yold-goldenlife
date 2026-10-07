@@ -6,7 +6,7 @@
   <title>이번 주 맞춤 케어 식단 구독 - 골든라이프</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=1.4.2">
+  <link rel="stylesheet" href="css/style.css?v=1.5.0">
 </head>
 <body>
   <div class="app-container" style="padding-bottom: 120px;">
@@ -55,14 +55,14 @@
 
       <!-- 3대 건강 필터 -->
       <section class="tag-chips-wrapper">
-        <button class="tag-chip active" onclick="filterMeal('all')"><i class="fa-solid fa-check"></i> 전체 건강식</button>
-        <button class="tag-chip" onclick="filterMeal('eye')"><i class="fa-solid fa-eye"></i> 시력/혈관 케어</button>
-        <button class="tag-chip" onclick="filterMeal('muscle')"><i class="fa-solid fa-dumbbell"></i> 마른근육/단백질</button>
-        <button class="tag-chip" onclick="filterMeal('bone')"><i class="fa-solid fa-bone"></i> 뼈/관절/저염</button>
+        <button class="tag-chip active" onclick="filterMeal('all', this)"><i class="fa-solid fa-check"></i> 전체 건강식</button>
+        <button class="tag-chip" onclick="filterMeal('eye', this)"><i class="fa-solid fa-eye"></i> 시력/혈관 케어</button>
+        <button class="tag-chip" onclick="filterMeal('muscle', this)"><i class="fa-solid fa-dumbbell"></i> 마른근육/단백질</button>
+        <button class="tag-chip" onclick="filterMeal('bone', this)"><i class="fa-solid fa-bone"></i> 뼈/관절/저염</button>
       </section>
 
       <!-- 상품 1: 셰프 조리 저염·당뇨 케어식 세트 -->
-      <article class="product-card">
+      <article class="product-card" data-meal-type="eye,bone">
         <div class="product-img-wrap">
           <img src="assets/images/care_meal_thumb.png" alt="셰프 조리 저염 당뇨 식단">
           <span class="badge-float-left" style="background: #16a34a; color: white;">
@@ -96,14 +96,19 @@
             <div class="pricing-amount">13,500<span>원 / 1끼</span></div>
           </div>
 
-          <button onclick="showToast('이번 주 저염 당뇨식 5첩 상세 메뉴표가 열렸습니다.')" class="btn-primary-action" style="background: #ffffff; color: #2C3328; border: 1.5px solid #2C3328; min-height: 52px; font-size: 16px;">
-            <i class="fa-solid fa-list-check"></i> 이번 주 메뉴 식단표 보기
-          </button>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <button onclick="showToast('이번 주 저염 당뇨식 5첩 상세 메뉴표가 열렸습니다.')" class="btn-primary-action" style="background: #ffffff; color: #2C3328; border: 1.5px solid #2C3328; min-height: 52px; font-size: 15px;">
+              <i class="fa-solid fa-list-check"></i> 식단표 보기
+            </button>
+            <button onclick="startMealSubscription()" class="btn-amber-action" style="min-height: 52px; font-size: 15px;">
+              <i class="fa-solid fa-check"></i> 바로 신청
+            </button>
+          </div>
         </div>
       </article>
 
       <!-- 상품 2: 해양심층수 & 웰빙 유기농 주스 패키지 -->
-      <article class="product-card">
+      <article class="product-card" data-meal-type="eye,muscle">
         <div class="product-img-wrap">
           <img src="assets/images/wellness_drink_thumb.png" alt="해양심층수 및 유기농 주스 패키지">
           <span class="badge-float-left" style="background: #0284c7; color: white;">
@@ -131,9 +136,14 @@
             <div class="pricing-amount">35,700<span>원 / 1박스</span></div>
           </div>
 
-          <button onclick="showToast('해양심층수 주스 성분 및 유기농 인증서가 확인되었습니다.')" class="btn-primary-action" style="background: #ffffff; color: #2C3328; border: 1.5px solid #2C3328; min-height: 52px; font-size: 16px;">
-            <i class="fa-solid fa-bottle-water"></i> 세부 패키지 함께 보기
-          </button>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <button onclick="showToast('해양심층수 주스 성분 및 유기농 인증서가 확인되었습니다.')" class="btn-primary-action" style="background: #ffffff; color: #2C3328; border: 1.5px solid #2C3328; min-height: 52px; font-size: 15px;">
+              <i class="fa-solid fa-bottle-water"></i> 성분 보기
+            </button>
+            <button onclick="bookProduct({title: '해양심층수 & 웰빙 유기농 주스 세트 (10병)', category: '시니어 건강 음료 구독', price: 35700, originalPrice: 45000, date: '매주 수요일 새벽 배송', party: '1박스 (유리병 10병)', image: 'assets/images/wellness_drink_thumb.png'})" class="btn-amber-action" style="min-height: 52px; font-size: 15px;">
+              <i class="fa-solid fa-cart-shopping"></i> 바로 신청
+            </button>
+          </div>
         </div>
       </article>
 
@@ -254,7 +264,7 @@
     </nav>
   </div>
 
-  <script src="js/app.js?v=1.4.2"></script>
+  <script src="js/app.js?v=1.5.0"></script>
   <script>
     let currentCycle = 2;
     function updateMealCycle(cycle) {
@@ -287,8 +297,29 @@
       });
     }
 
-    function filterMeal(type) {
-      showToast(`'${type}' 맞춤 식단 필터를 적용했습니다.`);
+    function filterMeal(type, btnElement) {
+      document.querySelectorAll('.tag-chips-wrapper .tag-chip').forEach(b => b.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.product-card[data-meal-type]');
+      let count = 0;
+      cards.forEach(card => {
+        const types = card.getAttribute('data-meal-type') || '';
+        if (type === 'all' || types.includes(type)) {
+          card.style.display = 'block';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      const labelMap = {
+        'all': '전체 맞춤 건강식 목록을 보여드립니다.',
+        'eye': '시력 및 혈관 케어 식단 2건을 정렬했습니다.',
+        'muscle': '마른근육 및 단백질 보충 식단 1건을 정렬했습니다.',
+        'bone': '뼈·관절 강화 및 저염식 1건을 정렬했습니다.'
+      };
+      showToast(labelMap[type] || '선택한 맞춤 식단을 정렬했습니다.');
     }
   </script>
 </body>
