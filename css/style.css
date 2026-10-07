@@ -1243,17 +1243,63 @@ button:active, a:active {
   text-shadow: 0 1px 2px rgba(255,255,255,0.8);
 }
 
-/* 첫 페이지 AI 말동무 히어로 카드 */
+/* 첫 페이지 AI 말동무 히어로 카드 (3D 전신 캐릭터 좌측 & 우측 대화창 레이아웃) */
 .ai-companion-card {
   background: linear-gradient(135deg, #2C3328 0%, #1A1F17 100%);
   border-radius: var(--radius-xl);
-  padding: 20px 18px;
+  padding: 18px 16px;
   color: #ffffff;
-  box-shadow: 0 10px 25px rgba(44, 51, 40, 0.25);
-  border: 1.5px solid rgba(197, 222, 181, 0.2);
+  box-shadow: 0 12px 28px rgba(44, 51, 40, 0.35);
+  border: 1.5px solid rgba(197, 222, 181, 0.25);
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.ai-companion-split-layout {
+  display: flex;
+  align-items: stretch;
   gap: 14px;
+}
+
+/* 좌측 3D 실사 전신 캐릭터 칼럼 */
+.companion-fullbody-col {
+  flex: 0 0 130px;
+  width: 130px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: #1e241b;
+  border: 1.5px solid rgba(197, 222, 181, 0.3);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.companion-fullbody-img {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.ai-companion-card:hover .companion-fullbody-img {
+  transform: scale(1.03);
+}
+
+/* 우측 dialogue box 칼럼 */
+.companion-dialogue-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
 }
 
 .ai-companion-header {
@@ -1262,38 +1308,69 @@ button:active, a:active {
   justify-content: space-between;
 }
 
+.companion-mini-face {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #C5DEB5;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
 .ai-companion-badge {
   background: rgba(91, 127, 62, 0.35);
   border: 1px solid #5B7F3E;
   color: #D4E8C8;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: var(--radius-full);
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
+  white-space: nowrap;
 }
 
 .ai-companion-dialog {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-md);
-  padding: 14px 16px;
-  font-size: calc(15px * var(--font-scale));
+  padding: 12px 14px;
+  font-size: calc(14.5px * var(--font-scale));
   line-height: 1.5;
   color: #E8F2E0;
   position: relative;
+  word-break: keep-all;
 }
 
 .ai-companion-dialog::before {
   content: '';
   position: absolute;
-  top: -8px;
-  left: 24px;
-  border-width: 0 8px 8px 8px;
+  top: 18px;
+  left: -8px;
+  border-width: 8px 8px 8px 0;
   border-style: solid;
-  border-color: transparent transparent rgba(255, 255, 255, 0.08) transparent;
+  border-color: transparent rgba(255, 255, 255, 0.08) transparent transparent;
+}
+
+/* 3D 얼굴 아바타 버튼 스타일 */
+.companion-nav-face-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50% !important;
+  object-fit: cover;
+  display: block;
+}
+
+.companion-btn-face-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
 }
 
 .ai-companion-actions {

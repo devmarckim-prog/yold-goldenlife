@@ -52,55 +52,49 @@
         </div>
       </section>
 
-      <!-- 🌟 AI 말동무 '가온' 히어로 카드 (다정한 친구 대화 모드) -->
+      <!-- 🌟 AI 말동무 '가온' 3D 실사 전신 캐릭터 & 대화창 (가로 분할 레이아웃) -->
       <section class="ai-companion-card">
-        <div class="ai-companion-header">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <!-- 다정한 친구 얼굴 SVG 아바타 -->
-            <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #74A84D, #3D5A2A); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(61,90,42,0.4); flex-shrink: 0;">
-              <svg viewBox="0 0 44 44" width="42" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="22" cy="22" r="18" fill="url(#gCardAv)" />
-                <circle cx="22" cy="7" r="2.8" fill="#FFD700" />
-                <path d="M22 9.8V12.5" stroke="#FFD700" stroke-width="1.8" stroke-linecap="round"/>
-                <rect x="9.5" y="13.5" width="25" height="21" rx="10.5" fill="#FFFFFF" />
-                <path d="M14.5 21.5C15.5 20 17.5 20 18.5 21.5" stroke="#3D5A2A" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M25.5 21.5C26.5 20 28.5 20 29.5 21.5" stroke="#3D5A2A" stroke-width="2.2" stroke-linecap="round"/>
-                <circle cx="14" cy="25.5" r="2.2" fill="#FFAAA6" opacity="0.85"/>
-                <circle cx="30" cy="25.5" r="2.2" fill="#FFAAA6" opacity="0.85"/>
-                <path d="M18 25.5C19.5 28.5 24.5 28.5 26 25.5" stroke="#3D5A2A" stroke-width="1.8" stroke-linecap="round" fill="#FF7B7B"/>
-                <defs>
-                  <linearGradient id="gCardAv" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#74A84D"/>
-                    <stop offset="1" stop-color="#3D5A2A"/>
-                  </linearGradient>
-                </defs>
-              </svg>
+        <div class="ai-companion-split-layout">
+          <!-- 좌측: 3D 실사 전신 캐릭터 (반갑게 손 흔드는 모습) -->
+          <div class="companion-fullbody-col">
+            <img src="assets/images/companion_fullbody.jpg" alt="3D 말동무 가온 전신" class="companion-fullbody-img">
+          </div>
+
+          <!-- 우측: Dialogue Box & 대화 조작 영역 -->
+          <div class="companion-dialogue-col">
+            <!-- 캐릭터 정보 헤더 -->
+            <div class="ai-companion-header">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="assets/images/companion_face.jpg" alt="가온 얼굴" class="companion-mini-face">
+                <div>
+                  <div style="font-size: 17px; font-weight: 900; color: #ffffff; line-height: 1.2;">말동무 가온</div>
+                  <span style="font-size: 11.5px; color: #D4E8C8; font-weight: 600;">최문영 님의 일상 친구</span>
+                </div>
+              </div>
+              <span class="ai-companion-badge"><i class="fa-solid fa-heart" style="color: #FFAAA6;"></i> 말벗 대화</span>
             </div>
-            <div>
-              <div style="font-size: 19px; font-weight: 900; color: #ffffff; line-height: 1.2;">다정한 말동무 가온</div>
-              <span style="font-size: 12.5px; color: #D4E8C8; font-weight: 600;">최문영 님을 위한 따뜻한 일상 친구</span>
+
+            <!-- 말풍선 Dialogue Box -->
+            <div class="ai-companion-dialog">
+              "문영 님, 오늘 하루 마음 편안히 보내셨나요? 따뜻한 차 한 잔 나누듯 이야기 편히 들려주세요. 언제나 귀 기울이고 있어요."
+            </div>
+
+            <!-- 3D 얼굴 아이콘이 들어간 대화하기 버튼 -->
+            <div class="ai-companion-actions">
+              <button onclick="openCompanionModal()" class="btn-companion-voice" data-companion-btn>
+                <img src="assets/images/companion_face.jpg" alt="가온 얼굴" class="companion-btn-face-icon">
+                <span>가온이와 대화하기</span>
+              </button>
             </div>
           </div>
-          <span class="ai-companion-badge"><i class="fa-solid fa-heart" style="color: #FFAAA6;"></i> 말벗 대화</span>
         </div>
 
-        <div class="ai-companion-dialog">
-          "문영 님, 오늘 하루 마음 편안히 보내셨나요? 따뜻한 차 한 잔 나누듯 오늘 있었던 일이나 재미난 이야기 편히 들려주세요. 제가 언제나 귀 기울이고 있어요."
-        </div>
-
-        <div class="ai-companion-actions">
-          <button onclick="openCompanionModal()" class="btn-companion-voice" data-companion-btn>
-            <i class="fa-solid fa-microphone" style="font-size: 20px;"></i>
-            <span>가온이와 이야기 나누기 (음성/말씀)</span>
-          </button>
-        </div>
-
-        <!-- 정다운 대화 주제 추천 칩 (상품 X, 순수 친구 대화 O) -->
-        <div style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none;">
+        <!-- 하단: 정다운 대화 주제 칩 -->
+        <div style="display: flex; gap: 6px; overflow-x: auto; padding-top: 4px; padding-bottom: 2px; scrollbar-width: none;">
           <button onclick="openCompanionModal('오늘 기분 좋은 이야기 들려줘')" class="btn-companion-quick">☀️ 따뜻한 안부 나누기</button>
           <button onclick="openCompanionModal('재미있는 옛날이야기 해줘')" class="btn-companion-quick">🌸 정다운 옛날이야기</button>
           <button onclick="openCompanionModal('마음 편해지는 건강차 추천해줘')" class="btn-companion-quick">🍵 건강차 추천</button>
-          <button onclick="openCompanionModal('가벼운 건강 스트레칭 알려줘')" class="btn-companion-quick">🧘 3분 의자 스트레칭</button>
+          <button onclick="openCompanionModal('가벼운 건강 스트레칭 알려줘')" class="btn-companion-quick">🧘 3분 스트레칭</button>
         </div>
       </section>
 
@@ -304,23 +298,7 @@
       <!-- 중앙 대형 AI 다정한 동반자(말동무) 버튼 (사각형 잘림 완벽 방지 & 따뜻한 친구 캐릭터) -->
       <button onclick="openCompanionModal()" class="nav-companion-btn" data-companion-btn title="다정한 말동무 가온과 대화하기">
         <div class="nav-companion-icon-wrap">
-          <svg viewBox="0 0 44 44" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="22" cy="22" r="18" fill="url(#gNavAv)" />
-            <circle cx="22" cy="7" r="2.8" fill="#FFD700" />
-            <path d="M22 9.8V12.5" stroke="#FFD700" stroke-width="1.8" stroke-linecap="round"/>
-            <rect x="9.5" y="13.5" width="25" height="21" rx="10.5" fill="#FFFFFF" />
-            <path d="M14.5 21.5C15.5 20 17.5 20 18.5 21.5" stroke="#3D5A2A" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M25.5 21.5C26.5 20 28.5 20 29.5 21.5" stroke="#3D5A2A" stroke-width="2.2" stroke-linecap="round"/>
-            <circle cx="14" cy="25.5" r="2.2" fill="#FFAAA6" opacity="0.85"/>
-            <circle cx="30" cy="25.5" r="2.2" fill="#FFAAA6" opacity="0.85"/>
-            <path d="M18 25.5C19.5 28.5 24.5 28.5 26 25.5" stroke="#3D5A2A" stroke-width="1.8" stroke-linecap="round" fill="#FF7B7B"/>
-            <defs>
-              <linearGradient id="gNavAv" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#74A84D"/>
-                <stop offset="1" stop-color="#3D5A2A"/>
-              </linearGradient>
-            </defs>
-          </svg>
+          <img src="assets/images/companion_face.jpg" alt="말동무 가온 얼굴" class="companion-nav-face-img">
         </div>
         <span class="nav-companion-label">AI 말동무</span>
       </button>
