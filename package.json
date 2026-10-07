@@ -1,6 +1,6 @@
 {
   "name": "yold-goldenlife-senior-app",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "골든라이프(Golden Life / YOLD) - Google Stitch 기반 액티브 시니어 O2O 라이프스타일 플랫폼",
   "main": "server.js",
   "scripts": {

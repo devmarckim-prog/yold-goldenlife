@@ -258,26 +258,8 @@ function openCompanionModal(initialPrompt = null) {
         <!-- 상단 헤더: 다정한 친구 가온 캐릭터 -->
         <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1.5px solid #D5DDD0; padding-bottom: 14px;">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <!-- 다정한 친구 얼굴 SVG 아바타 -->
-            <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #74A84D, #3D5A2A); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(61,90,42,0.35); flex-shrink: 0;">
-              <svg viewBox="0 0 44 44" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="22" cy="22" r="18" fill="url(#gAvTop)" />
-                <circle cx="22" cy="7" r="2.8" fill="#FFD700" />
-                <path d="M22 9.8V12.5" stroke="#FFD700" stroke-width="1.8" stroke-linecap="round"/>
-                <rect x="9.5" y="13.5" width="25" height="21" rx="10.5" fill="#FFFFFF" />
-                <path d="M14.5 21.5C15.5 20 17.5 20 18.5 21.5" stroke="#3D5A2A" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M25.5 21.5C26.5 20 28.5 20 29.5 21.5" stroke="#3D5A2A" stroke-width="2.2" stroke-linecap="round"/>
-                <circle cx="14" cy="25.5" r="2.2" fill="#FFAAA6" opacity="0.85"/>
-                <circle cx="30" cy="25.5" r="2.2" fill="#FFAAA6" opacity="0.85"/>
-                <path d="M18 25.5C19.5 28.5 24.5 28.5 26 25.5" stroke="#3D5A2A" stroke-width="1.8" stroke-linecap="round" fill="#FF7B7B"/>
-                <defs>
-                  <linearGradient id="gAvTop" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#74A84D"/>
-                    <stop offset="1" stop-color="#3D5A2A"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
+            <!-- 다정한 친구 얼굴 3D 실사 아바타 -->
+            <img src="assets/images/companion_face.jpg" alt="말동무 가온 얼굴" style="width: 50px; height: 50px; min-width: 50px; min-height: 50px; max-width: 50px; max-height: 50px; border-radius: 50%; object-fit: cover; border: 2.5px solid #C5DEB5; box-shadow: 0 4px 14px rgba(61,90,42,0.35); flex-shrink: 0; display: block;">
             <div>
               <div style="display: flex; align-items: center; gap: 6px;">
                 <h3 style="font-size: 19px; font-weight: 900; color: #2C3328; margin: 0;">다정한 말동무 가온</h3>

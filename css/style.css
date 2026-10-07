@@ -63,6 +63,12 @@ html[data-font-size="xlarge"] {
   -webkit-tap-highlight-color: transparent;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, label, li {
   word-break: keep-all; /* 한글 단어가 글자 단위로 어색하게 쪼개지는 현상 전면 방지 */
   overflow-wrap: break-word;
@@ -1204,8 +1210,12 @@ button:active, a:active {
 }
 
 .nav-companion-icon-wrap {
-  width: 64px;
-  height: 64px;
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  min-height: 64px !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
   border-radius: 50% !important;
   background: linear-gradient(135deg, #74A84D 0%, #3D5A2A 100%);
   color: #ffffff;
@@ -1215,7 +1225,7 @@ button:active, a:active {
   box-shadow: 0 10px 24px rgba(61, 90, 42, 0.45), 0 0 0 4.5px #ffffff;
   transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation: companion-pulse 3s infinite ease-in-out;
-  overflow: visible !important;
+  overflow: hidden !important; /* 내부 아바타 이미지가 튀어나오지 않고 완벽한 원형으로 클리핑 */
   position: relative;
 }
 
@@ -1279,12 +1289,14 @@ button:active, a:active {
 }
 
 .companion-fullbody-img {
-  width: 100%;
-  height: 100%;
-  min-height: 240px;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  max-height: 260px !important;
+  min-height: 220px;
+  object-fit: cover !important;
+  object-position: top center !important;
+  display: block !important;
   transition: transform 0.3s ease;
 }
 
@@ -1300,6 +1312,7 @@ button:active, a:active {
   justify-content: space-between;
   gap: 10px;
   min-width: 0;
+  overflow: hidden;
 }
 
 .ai-companion-header {
@@ -1309,13 +1322,16 @@ button:active, a:active {
 }
 
 .companion-mini-face {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 38px !important;
+  height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
   border: 2px solid #C5DEB5;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
+  display: block !important;
 }
 
 .ai-companion-badge {
@@ -1356,21 +1372,26 @@ button:active, a:active {
 
 /* 3D 얼굴 아바타 버튼 스타일 */
 .companion-nav-face-img {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   border-radius: 50% !important;
-  object-fit: cover;
-  display: block;
+  object-fit: cover !important;
+  display: block !important;
 }
 
 .companion-btn-face-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 30px !important;
+  height: 30px !important;
+  max-width: 30px !important;
+  max-height: 30px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
   border: 2px solid #ffffff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
+  display: block !important;
 }
 
 .ai-companion-actions {

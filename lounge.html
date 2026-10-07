@@ -3,32 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>오프라인 시니어 라운지 & 커뮤니티 - 골든라이프</title>
+  <title>?�프?�인 ?�니???�운지 & 커�??�티 - 골든?�이??/title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=1.4.1">
 </head>
 <body>
   <div class="app-container">
-    <!-- 상단 헤더 -->
+    <!-- ?�단 ?�더 -->
     <header class="app-header">
       <div style="display: flex; align-items: center; gap: 8px;">
         <i class="fa-solid fa-location-dot" style="color: #5B7F3E; font-size: 18px;"></i>
         <div>
-          <span style="font-size: 12px; color: #64748b; font-weight: 700; display: block;">내 주변 지점</span>
-          <strong style="font-size: 18px; color: #2C3328;">강남 테헤란로점</strong>
+          <span style="font-size: 12px; color: #64748b; font-weight: 700; display: block;">??주�? 지??/span>
+          <strong style="font-size: 18px; color: #2C3328;">강남 ?�헤?�로점</strong>
         </div>
       </div>
       <div class="header-actions">
-        <button class="font-scale-btn" onclick="toggleFontScale()" title="글자 크기 변경">
+        <button class="font-scale-btn" onclick="toggleFontScale()" title="글???�기 변�?>
           <i class="fa-solid fa-font"></i> 가+
         </button>
-        <button class="header-icon-btn" data-voice-search aria-label="음성 검색">
+        <button class="header-icon-btn" data-voice-search aria-label="?�성 검??>
           <i class="fa-solid fa-microphone"></i>
         </button>
-        <a href="mypage.html" class="header-user-btn" aria-label="최문영 님 마이페이지">
+        <a href="mypage.html" class="header-user-btn" aria-label="최문????마이?�이지">
           <i class="fa-solid fa-user"></i>
-          <span>최문영 님</span>
+          <span>최문????/span>
           <span class="badge-my">마이</span>
         </a>
       </div>
@@ -36,161 +36,158 @@
 
     <!-- 메인 본문 -->
     <main class="content-body">
-      <!-- 내 근처 시니어 살롱 & 카페 카드 -->
+      <!-- ??근처 ?�니???�롱 & 카페 카드 -->
       <section style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 18px; box-shadow: var(--shadow-sm);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
           <div style="display: flex; align-items: center; gap: 8px;">
             <i class="fa-solid fa-mug-saucer" style="color: #3D5A2A; font-size: 18px;"></i>
-            <h2 style="font-size: 18px; font-weight: 800; color: #2C3328; margin: 0;">내 근처 시니어 살롱 & 카페</h2>
+            <h2 style="font-size: 18px; font-weight: 800; color: #2C3328; margin: 0;">??근처 ?�니???�롱 & 카페</h2>
           </div>
-          <button onclick="showToast('지점 목록: 종로점, 분당점, 일산점을 선택할 수 있습니다.')" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 4px 12px; font-size: 13px; font-weight: 700; color: #2C3328; cursor: pointer;">
-            지점변경
-          </button>
+          <button onclick="showToast('지??목록: 종로?? 분당?? ?�산?�을 ?�택?????�습?�다.')" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 4px 12px; font-size: 13px; font-weight: 700; color: #2C3328; cursor: pointer;">
+            지?��?�?          </button>
         </div>
 
-        <!-- 지도 시각화 썸네일 -->
+        <!-- 지???�각???�네??-->
         <div style="position: relative; height: 130px; border-radius: var(--radius-md); overflow: hidden; background: #e2e8f0; margin-bottom: 12px;">
-          <!-- 모의 지도 그래픽 -->
+          <!-- 모의 지??그래??-->
           <div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, #E0EED8 0%, #cbd5e1 100%); display: flex; align-items: center; justify-content: center;">
             <div style="background: rgba(255, 255, 255, 0.95); border: 2px solid #5B7F3E; padding: 8px 14px; border-radius: 9999px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
               <i class="fa-solid fa-location-pin" style="color: #dc2626; font-size: 18px;"></i>
-              <span style="font-size: 14px; font-weight: 800; color: #2C3328;">강남타워 3층 골든라운지</span>
+              <span style="font-size: 14px; font-weight: 800; color: #2C3328;">강남?�??3�?골든?�운지</span>
             </div>
           </div>
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #64748b; font-weight: 600;">
-          <span><i class="fa-solid fa-person-walking" style="color: #5B7F3E;"></i> 현재 위치에서 1.2km</span>
-          <span><i class="fa-solid fa-car" style="color: #16a34a;"></i> 주차 무료 발렛 지원</span>
+          <span><i class="fa-solid fa-person-walking" style="color: #5B7F3E;"></i> ?�재 ?�치?�서 1.2km</span>
+          <span><i class="fa-solid fa-car" style="color: #16a34a;"></i> 주차 무료 발렛 지??/span>
         </div>
       </section>
 
-      <!-- 대표 라운지 소개: 강남 프리미엄 웰빙 라운지 -->
+      <!-- ?�???�운지 ?�개: 강남 ?�리미엄 ?�빙 ?�운지 -->
       <article class="product-card">
         <div class="product-img-wrap">
-          <img src="assets/images/lounge_interior.jpg" alt="강남 프리미엄 라운지">
+          <img src="assets/images/lounge_interior.jpg" alt="강남 ?�리미엄 ?�운지">
           <span class="badge-float-left" style="background: #16a34a; color: white;">
-            <i class="fa-solid fa-door-open"></i> 오늘 방문 가능
-          </span>
-          <span class="badge-float-bottom">운영시간 09:00 ~ 21:00</span>
+            <i class="fa-solid fa-door-open"></i> ?�늘 방문 가??          </span>
+          <span class="badge-float-bottom">?�영?�간 09:00 ~ 21:00</span>
         </div>
         <div class="product-info-wrap">
-          <h3 class="product-title">강남 프리미엄 웰빙 라운지</h3>
+          <h3 class="product-title">강남 ?�리미엄 ?�빙 ?�운지</h3>
           <p style="font-size: 14px; color: #64748b; line-height: 1.5; margin: 0;">
-            일상 속 편안한 쉼과 활력 넘치는 동년배 대화가 있는 시니어 전용 멤버십 복합 문화 공간입니다.
+            ?�상 ???�안???�과 ?�력 ?�치???�년�??�?��? ?�는 ?�니???�용 멤버??복합 문화 공간?�니??
           </p>
 
           <div style="background: #f8f9fa; border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; gap: 10px; margin: 4px 0;">
             <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #334155; font-weight: 600;">
               <i class="fa-solid fa-mug-hot" style="color: #5B7F3E; width: 20px;"></i>
-              <span>유기농 건강차 & 핸드드립 커피 무제한</span>
+              <span>?�기??건강�?& ?�드?�립 커피 무제??/span>
             </div>
             <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #334155; font-weight: 600;">
               <i class="fa-solid fa-headphones" style="color: #2563eb; width: 20px;"></i>
-              <span>엄선 클래식 오디오 & LP 청음실 완비</span>
+              <span>?�선 ?�래???�디??& LP �?��???�비</span>
             </div>
             <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #334155; font-weight: 600;">
               <i class="fa-solid fa-book-open-reader" style="color: #16a34a; width: 20px;"></i>
-              <span>심신 평온한 대형 활자 서가 & 정기간행물</span>
+              <span>?�신 ?�온???�???�자 ?��? & ?�기간행�?/span>
             </div>
           </div>
 
-          <button onclick="showToast('강남 라운지 무료 이용 예약이 확정되었습니다. 입장 시 하단 출입 패스를 태그해 주세요.')" class="btn-amber-action">
-            <i class="fa-solid fa-calendar-check"></i> 방문 예약하기 (골드 멤버십 무료)
+          <button onclick="showToast('강남 ?�운지 무료 ?�용 ?�약???�정?�었?�니?? ?�장 ???�단 출입 ?�스�??�그??주세??')" class="btn-amber-action">
+            <i class="fa-solid fa-calendar-check"></i> 방문 ?�약?�기 (골드 멤버??무료)
           </button>
         </div>
       </article>
 
-      <!-- 함께 배우는 살롱 클래스 -->
+      <!-- ?�께 배우???�롱 ?�래??-->
       <section>
         <div class="section-header">
-          <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #5B7F3E;"></i> 함께 배우는 살롱 클래스</h2>
-          <a href="#" onclick="showToast('전체 8개 클래스 목록을 준비 중입니다.'); return false;" class="section-more-link">전체보기 <i class="fa-solid fa-chevron-right"></i></a>
+          <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #5B7F3E;"></i> ?�께 배우???�롱 ?�래??/h2>
+          <a href="#" onclick="showToast('?�체 8�??�래??목록??준�?중입?�다.'); return false;" class="section-more-link">?�체보기 <i class="fa-solid fa-chevron-right"></i></a>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 14px;">
-          <!-- 클래스 1 -->
+          <!-- ?�래??1 -->
           <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 18px; box-shadow: var(--shadow-sm);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
               <span style="background: #fef2f2; color: #dc2626; font-size: 12px; font-weight: 800; padding: 4px 8px; border-radius: 9999px;">
-                <i class="fa-solid fa-fire"></i> 인기 만원임박
+                <i class="fa-solid fa-fire"></i> ?�기 만원?�박
               </span>
-              <span style="font-size: 13px; font-weight: 700; color: #dc2626;">잔여 2석</span>
+              <span style="font-size: 13px; font-weight: 700; color: #dc2626;">?�여 2??/span>
             </div>
 
             <h4 style="font-size: 18px; font-weight: 800; color: #2C3328; margin: 0 0 6px;">
-              수요일 오후 2시: 스마트폰 디지털 사진 & 영상 교실
+              ?�요???�후 2?? ?�마?�폰 ?��????�진 & ?�상 교실
             </h4>
             <p style="font-size: 14px; color: #64748b; margin-bottom: 12px;">
-              <i class="fa-solid fa-chalkboard-user"></i> 전문 포토그래퍼 김도현 강사 직접 코칭
+              <i class="fa-solid fa-chalkboard-user"></i> ?�문 ?�토그래??김?�현 강사 직접 코칭
             </p>
 
             <div style="margin-bottom: 12px;">
               <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 4px;">
-                <span style="color: #64748b;">모집 인원</span>
-                <span style="color: #2C3328;">8명 / 10명 확정 (80%)</span>
+                <span style="color: #64748b;">모집 ?�원</span>
+                <span style="color: #2C3328;">8�?/ 10�??�정 (80%)</span>
               </div>
               <div style="width: 100%; height: 8px; background: #e2e8f0; border-radius: 9999px; overflow: hidden;">
                 <div style="width: 80%; height: 100%; background: #5B7F3E;"></div>
               </div>
             </div>
 
-            <button onclick="showToast('스마트폰 사진 교실 수강 신청이 완료되었습니다! (안내문자가 발송됩니다)')" class="btn-primary-action" style="min-height: 52px; font-size: 16px;">
-              <i class="fa-solid fa-pen-to-square"></i> 수강 신청하기
+            <button onclick="showToast('?�마?�폰 ?�진 교실 ?�강 ?�청???�료?�었?�니?? (?�내문자가 발송?�니??')" class="btn-primary-action" style="min-height: 52px; font-size: 16px;">
+              <i class="fa-solid fa-pen-to-square"></i> ?�강 ?�청?�기
             </button>
           </div>
 
-          <!-- 클래스 2 -->
+          <!-- ?�래??2 -->
           <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-lg); padding: 18px; box-shadow: var(--shadow-sm);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
               <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: 800; padding: 4px 8px; border-radius: 9999px;">
-                <i class="fa-solid fa-star"></i> 명사 초청 특강
+                <i class="fa-solid fa-star"></i> 명사 초청 ?�강
               </span>
-              <span style="font-size: 13px; font-weight: 700; color: #16a34a;">신청 가능</span>
+              <span style="font-size: 13px; font-weight: 700; color: #16a34a;">?�청 가??/span>
             </div>
 
             <h4 style="font-size: 18px; font-weight: 800; color: #2C3328; margin: 0 0 6px;">
-              금요일 오전 11시: 100세 시대 은퇴 자산관리 세미나
-            </h4>
+              금요???�전 11?? 100???��? ?�???�산관�??��???            </h4>
             <p style="font-size: 14px; color: #64748b; margin-bottom: 8px;">
-              <i class="fa-solid fa-chalkboard-user"></i> 전 금융자산연구원장 박영식 박사
+              <i class="fa-solid fa-chalkboard-user"></i> ??금융?�산?�구?�장 박영??박사
             </p>
 
             <div style="background: #f8f9fa; border-radius: var(--radius-md); padding: 10px; font-size: 13px; color: #3D6B35; font-weight: 700; margin-bottom: 12px;">
-              <i class="fa-solid fa-gift"></i> 참가비 전액 협찬사 지원 및 1:1 세무 무료 상담 포함
+              <i class="fa-solid fa-gift"></i> 참�?�??�액 ?�찬??지??�?1:1 ?�무 무료 ?�담 ?�함
             </div>
 
-            <button onclick="showToast('100세 자산관리 세미나 신청이 완료되었습니다.')" class="btn-primary-action" style="min-height: 52px; font-size: 16px;">
-              <i class="fa-solid fa-pen-to-square"></i> 수강 신청하기
+            <button onclick="showToast('100???�산관�??��????�청???�료?�었?�니??')" class="btn-primary-action" style="min-height: 52px; font-size: 16px;">
+              <i class="fa-solid fa-pen-to-square"></i> ?�강 ?�청?�기
             </button>
           </div>
         </div>
       </section>
 
-      <!-- 오프라인 라운지 출입 패스 (키오스크 태그 바코드 카드) -->
+      <!-- ?�프?�인 ?�운지 출입 ?�스 (?�오?�크 ?�그 바코??카드) -->
       <section>
         <div class="section-header">
-          <h2 class="section-title"><i class="fa-solid fa-id-card" style="color: #5B7F3E;"></i> 오프라인 라운지 출입 패스</h2>
-          <span style="font-size: 13px; color: #64748b;">키오스크 태그용</span>
+          <h2 class="section-title"><i class="fa-solid fa-id-card" style="color: #5B7F3E;"></i> ?�프?�인 ?�운지 출입 ?�스</h2>
+          <span style="font-size: 13px; color: #64748b;">?�오?�크 ?�그??/span>
         </div>
 
         <div style="background: linear-gradient(135deg, #2C3328, #1A1F17); border-radius: var(--radius-xl); padding: 24px 20px; color: white; box-shadow: var(--shadow-lg);">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
             <div style="display: flex; align-items: center; gap: 8px;">
               <i class="fa-solid fa-crown" style="color: #6B8F4E; font-size: 20px;"></i>
-              <span style="font-size: 16px; font-weight: 800; color: #D4E8C8;">골든라이프 골드 멤버십</span>
+              <span style="font-size: 16px; font-weight: 800; color: #D4E8C8;">골든?�이??골드 멤버??/span>
             </div>
-            <span style="background: #6B8F4E; color: #000; font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 9999px;">VIP 등급</span>
+            <span style="background: #6B8F4E; color: #000; font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 9999px;">VIP ?�급</span>
           </div>
 
           <div style="margin-bottom: 16px;">
-            <div style="font-size: 24px; font-weight: 900; letter-spacing: -0.02em;">최문영 회원님</div>
-            <div style="font-size: 13px; color: #94a3b8; font-family: monospace;">회원번호 No. 2024-8842-KOR</div>
+            <div style="font-size: 24px; font-weight: 900; letter-spacing: -0.02em;">최문???�원??/div>
+            <div style="font-size: 13px; color: #94a3b8; font-family: monospace;">?�원번호 No. 2024-8842-KOR</div>
           </div>
 
-          <!-- 실제 바코드 시각화 -->
+          <!-- ?�제 바코???�각??-->
           <div class="barcode-visual">
-            <span style="font-size: 13px; font-weight: 700; color: #64748b;">라운지 입구 스캐너에 태그하세요</span>
+            <span style="font-size: 13px; font-weight: 700; color: #64748b;">?�운지 ?�구 ?�캐?�에 ?�그?�세??/span>
             <div class="barcode-lines">
               <div class="b-bar w2"></div><div class="b-bar w1"></div><div class="b-bar w3"></div><div class="b-bar w1"></div>
               <div class="b-bar w4"></div><div class="b-bar w2"></div><div class="b-bar w1"></div><div class="b-bar w3"></div>
@@ -204,40 +201,40 @@
 
           <div style="margin-top: 14px; text-align: center; font-size: 13px; color: #cbd5e1; display: flex; align-items: center; justify-content: center; gap: 6px;">
             <i class="fa-solid fa-door-open" style="color: #6B8F4E;"></i>
-            <span>태그하시면 자동문이 시계방향으로 개폐됩니다.</span>
+            <span>?�그?�시�??�동문이 ?�계방향?�로 개폐?�니??</span>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- 고정 하단 탭 바 (홈·마이 제외, 핵심 서비스 & 중앙 대형 친구 AI 말동무) -->
+    <!-- 고정 ?�단 ??�?(?�·마???�외, ?�심 ?�비??& 중앙 ?�??친구 AI 말동�? -->
     <nav class="bottom-nav">
       <a href="travel.html" class="nav-item">
         <i class="fa-solid fa-compass"></i>
-        <span>여행</span>
+        <span>?�행</span>
       </a>
       <a href="dining.html" class="nav-item">
         <i class="fa-solid fa-utensils"></i>
         <span>맛집</span>
       </a>
-      <!-- 중앙 대형 AI 다정한 동반자(말동무) 버튼 (사각형 잘림 완벽 방지 & 따뜻한 친구 캐릭터) -->
-      <button onclick="openCompanionModal()" class="nav-companion-btn" data-companion-btn title="다정한 말동무 가온과 대화하기">
+      <!-- 중앙 ?�??AI ?�정???�반??말동�? 버튼 (?�각???�림 ?�벽 방�? & ?�뜻??친구 캐릭?? -->
+      <button onclick="openCompanionModal()" class="nav-companion-btn" data-companion-btn title="?�정??말동�?가?�과 ?�?�하�?>
         <div class="nav-companion-icon-wrap">
-          <img src="assets/images/companion_face.jpg" alt="말동무 가온 얼굴" class="companion-nav-face-img">
+          <img src="assets/images/companion_face.jpg" alt="말동�?가???�굴" class="companion-nav-face-img">
         </div>
-        <span class="nav-companion-label">AI 말동무</span>
+        <span class="nav-companion-label">AI 말동�?/span>
       </button>
       <a href="care_food.html" class="nav-item">
         <i class="fa-solid fa-bowl-food"></i>
-        <span>케어푸드</span>
+        <span>케?�푸??/span>
       </a>
       <a href="lounge.html" class="nav-item active">
         <i class="fa-solid fa-users"></i>
-        <span>라운지</span>
+        <span>?�운지</span>
       </a>
     </nav>
   </div>
 
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=1.4.1"></script>
 </body>
 </html>
