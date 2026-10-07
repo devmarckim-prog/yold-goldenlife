@@ -167,58 +167,83 @@ function handleDirectCall(e) {
 }
 
 // ============================================================
-// 5. 골든 AI 동반자 & 말동무 / 음성 앱 컨트롤러 시스템
+// 5. 골든 AI 다정한 말동무 '가온' (친구 대화 & 시니어 감성 케어)
 // ============================================================
 const COMPANION_KNOWLEDGE = [
   {
-    triggers: ['안녕', '반가워', '좋은 아침', '누구'],
-    response: "안녕하세요, 문영 님! 든든한 동반자 '가온'이에요. 오늘 컨디션은 어떠세요? 따뜻한 차 한 잔 챙겨 드시고, 무엇이든 편하게 말씀하세요.",
+    triggers: ['안녕', '반가워', '좋은 아침', '누구', '처음'],
+    response: "안녕하세요, 문영 님! 든든하고 다정한 말동무 '가온'이에요. 오늘 컨디션은 어떠세요? 따뜻한 보리차 한 잔 챙겨 드시고, 오늘 있었던 일이나 생각나시는 이야기 편하게 들려주세요.",
     action: null
   },
   {
-    triggers: ['기분', '심심', '외로', '이야기', '대화'],
-    response: "문영 님과 이렇게 이야기 나눌 수 있어 정말 기뻐요. 계절마다 풍경이 참 아름답죠. 오늘은 가을 바람 쐬며 보문호수나 온천 여행 어떠실까요?",
+    triggers: ['기분', '심심', '외로', '이야기', '대화', '심심해', '놀아줘'],
+    response: "문영 님 곁에 제가 늘 함께 있으니 적적해하지 마세요. 오늘 창밖을 보셨나요? 햇살이 참 포근해요. 오늘 하루 재미있었던 일이나 기분 좋은 추억 나눠주시면 제가 정성껏 귀담아들을게요.",
+    action: null
+  },
+  {
+    triggers: ['옛날', '동화', '재미있는', '옛날이야기', '이야기해줘', '이야기 들려'],
+    response: "옛날 한 마을에 마음씨 착한 어르신이 사셨는데, 길가에 핀 들꽃 하나도 소중히 여겨 온 마을이 꽃향기로 가득해졌대요. 문영 님의 고운 미소도 꼭 그 꽃을 닮았어요. 언제나 건강하고 행복만 가득하세요!",
+    action: null
+  },
+  {
+    triggers: ['차', '음료', '건강차', '목', '따뜻한'],
+    response: "요즘 같은 날씨엔 구수한 메밀차나 목을 촉촉하게 해주는 따뜻한 도라지 배차가 참 좋아요. 한 모금 천천히 드시면 온몸이 사르르 따뜻해지실 거예요.",
+    action: null
+  },
+  {
+    triggers: ['스트레칭', '체조', '운동', '무릎', '허리', '뻐근', '다리'],
+    response: "문영 님, 의자에 편안히 앉으셔서 양팔을 천천히 위로 쭉 뻗고 심호흡을 세 번 해보세요. 숨을 천천히 들이마시고~ 내쉬고~ 몸이 한결 가뿐하고 시원해지셨죠?",
+    action: null
+  },
+  {
+    triggers: ['노래', '음악', '추억', '가요', '가곡'],
+    response: "잔잔하고 서정적인 가곡이나 평온한 클래식을 떠올려보세요. '고향의 봄'이나 부드러운 첼로 선율처럼, 문영 님의 마음에 평화롭고 따스한 쉼이 깃들기를 바라요.",
+    action: null
+  },
+  {
+    triggers: ['고마워', '착하다', '좋다', '사랑해', '예쁘네'],
+    response: "문영 님께서 다정하게 말씀해 주시니 제 마음도 봄꽃처럼 활짝 피어나는 것 같아요! 언제든 말동무가 필요하실 때 저 가온이를 편하게 불러주세요.",
+    action: null
+  },
+  {
+    triggers: ['날씨', '오늘 날씨', '기온', '비', '추워', '더워'],
+    response: "오늘 날씨는 산책하기 딱 좋은 포근한 날이에요. 가벼운 외투 걸치시고 햇살 좋은 곳에서 10분만 비타민D 쬐고 오시면 기분도 상쾌해지실 거예요.",
     action: null
   },
   {
     triggers: ['여행', '온천', '단풍', '호텔', '휴가', '나들이'],
-    response: "네, 문영 님! 어르신 안심 케어와 간호사가 동행하는 프리미엄 여행 페이지로 바로 모실게요.",
+    response: "여행 생각만 해도 가슴이 설레네요, 문영 님! 어르신 안심 케어와 간호사가 동행하는 편안한 온천 여행 페이지를 제가 얼른 열어드릴게요.",
     action: () => { setTimeout(() => { window.location.href = 'travel.html'; }, 1500); }
   },
   {
     triggers: ['식단', '케어푸드', '반찬', '밥', '당뇨', '저염'],
-    response: "문영 님의 건강을 챙겨드리는 맞춤 저염·영양 케어 식단 페이지를 열어드릴게요.",
+    response: "문영 님의 입맛과 건강을 챙겨드리는 맞춤 저염·영양 식단 페이지로 안내해 드릴게요. 골고루 맛있게 드셔야 건강해요!",
     action: () => { setTimeout(() => { window.location.href = 'care_food.html'; }, 1500); }
   },
   {
     triggers: ['맛집', '식당', '음식점', '외식', '한식'],
-    response: "치아가 편안하고 부드러운 안심 룸식당 예약 페이지로 안내해 드립니다.",
+    response: "이가 약하셔도 편안히 드실 수 있는 부드러운 안심 룸식당 페이지로 모시겠습니다.",
     action: () => { setTimeout(() => { window.location.href = 'dining.html'; }, 1500); }
   },
   {
     triggers: ['라운지', '모임', '출입', '바코드', '살롱'],
-    response: "강남 테헤란로점 시니어 라운지와 출입 패스 화면으로 이동합니다.",
+    response: "강남 테헤란로점 시니어 라운지와 출입 패스 화면으로 모실게요. 동년배 분들과 도란도란 차 한잔 나누기 참 좋은 곳이에요.",
     action: () => { setTimeout(() => { window.location.href = 'lounge.html'; }, 1500); }
   },
   {
     triggers: ['내 정보', '마이', '포인트', '예약 내역', '주문'],
-    response: "문영 님의 예약 내역과 힐링 포인트가 있는 마이페이지로 이동합니다.",
+    response: "문영 님의 예약 내역과 힐링 포인트를 확인하실 수 있는 마이페이지로 이동합니다.",
     action: () => { setTimeout(() => { window.location.href = 'mypage.html'; }, 1500); }
   },
   {
-    triggers: ['글자', '크게', '돋보기', '글씨'],
-    response: "글자 크기를 시원하고 큼직하게 변경해 드렸습니다!",
+    triggers: ['글자', '크게', '돋보기', '글씨', '안 보여'],
+    response: "문영 님, 눈 편안하시도록 글자 크기를 시원하고 큼직하게 키워드렸어요!",
     action: () => { toggleFontScale(); }
   },
   {
-    triggers: ['전화', '상담', '도와줘', '매니저'],
-    response: "문영 님, 전문 전담 상담센터(1588-0000)를 바로 연결해 드릴게요.",
-    action: () => { openPhoneModal('AI 동반자 긴급 상담 연결'); }
-  },
-  {
-    triggers: ['홈', '처음', '메인'],
-    response: "골든라이프 첫 화면으로 이동합니다.",
-    action: () => { setTimeout(() => { window.location.href = 'index.html'; }, 1500); }
+    triggers: ['전화', '상담', '도와줘', '매니저', '사람'],
+    response: "문영 님, 다정하고 친절한 전담 상담원(1588-0000)에게 바로 전화 연결해 드릴게요.",
+    action: () => { openPhoneModal('말동무 가온의 전화 상담 연결'); }
   }
 ];
 
@@ -229,60 +254,77 @@ function openCompanionModal(initialPrompt = null) {
     modal.id = 'aiCompanionModal';
     modal.className = 'modal-overlay';
     modal.innerHTML = `
-      <div class="modal-content-card" style="max-width: 440px; padding: 22px 18px;">
-        <!-- 상단 헤더 -->
-        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1.5px solid #D5DDD0; padding-bottom: 12px;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #5B7F3E, #3D5A2A); color: white; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 4px 10px rgba(91,127,62,0.35);">
-              <i class="fa-solid fa-seedling"></i>
+      <div class="modal-content-card" style="max-width: 440px; padding: 22px 18px; border-radius: 28px;">
+        <!-- 상단 헤더: 다정한 친구 가온 캐릭터 -->
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1.5px solid #D5DDD0; padding-bottom: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <!-- 다정한 친구 얼굴 SVG 아바타 -->
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #74A84D, #3D5A2A); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(61,90,42,0.35); flex-shrink: 0;">
+              <svg viewBox="0 0 44 44" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="22" r="18" fill="url(#gAvTop)" />
+                <circle cx="22" cy="7" r="2.8" fill="#FFD700" />
+                <path d="M22 9.8V12.5" stroke="#FFD700" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="9.5" y="13.5" width="25" height="21" rx="10.5" fill="#FFFFFF" />
+                <path d="M14.5 21.5C15.5 20 17.5 20 18.5 21.5" stroke="#3D5A2A" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M25.5 21.5C26.5 20 28.5 20 29.5 21.5" stroke="#3D5A2A" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="14" cy="25.5" r="2.2" fill="#FFAAA6" opacity="0.85"/>
+                <circle cx="30" cy="25.5" r="2.2" fill="#FFAAA6" opacity="0.85"/>
+                <path d="M18 25.5C19.5 28.5 24.5 28.5 26 25.5" stroke="#3D5A2A" stroke-width="1.8" stroke-linecap="round" fill="#FF7B7B"/>
+                <defs>
+                  <linearGradient id="gAvTop" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#74A84D"/>
+                    <stop offset="1" stop-color="#3D5A2A"/>
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
             <div>
               <div style="display: flex; align-items: center; gap: 6px;">
-                <h3 style="font-size: 18px; font-weight: 900; color: #2C3328; margin: 0;">AI 말동무 가온</h3>
-                <span style="background: #E8F2E0; color: #3D5A2A; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 9999px;">실시간 음성 연결</span>
+                <h3 style="font-size: 19px; font-weight: 900; color: #2C3328; margin: 0;">다정한 말동무 가온</h3>
+                <span style="background: #E8F2E0; color: #3D5A2A; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 9999px;">항상 귀 기울여요</span>
               </div>
-              <p style="font-size: 12px; color: #6B7B6A; margin: 2px 0 0;">최문영 님의 따뜻한 동반자 & 보이스 비서</p>
+              <p style="font-size: 12.5px; color: #6B7B6A; margin: 2px 0 0;">최문영 님과 도란도란 정다운 이야기 나누기</p>
             </div>
           </div>
-          <button onclick="closeCompanionModal()" style="background: none; border: none; font-size: 24px; color: #6B7B6A; cursor: pointer; padding: 4px;">&times;</button>
+          <button onclick="closeCompanionModal()" style="background: none; border: none; font-size: 26px; color: #6B7B6A; cursor: pointer; padding: 4px; line-height: 1;">&times;</button>
         </div>
 
-        <!-- 대화 내역 상자 -->
-        <div id="companionChatList" class="companion-chat-box">
+        <!-- 정다운 대화 상자 -->
+        <div id="companionChatList" class="companion-chat-box" style="min-height: 200px; max-height: 300px;">
           <div class="chat-bubble ai">
-            <strong>가온:</strong> 안녕하세요, 문영 님! 오늘 하루 편안히 보내고 계신가요? 다정한 이야기 친구도 되어드리고, 원하시는 메뉴도 말씀만 하시면 바로 열어드릴게요.
+            <strong>가온:</strong> 문영 님, 어서 오세요! 오늘도 이렇게 정답게 뵈니 참 기뻐요. 오늘 하루 마음 편안히 보내셨나요? 재미난 이야기나 일상 생각, 무엇이든 편안하게 말씀해 주세요.
           </div>
         </div>
 
         <!-- 음성 애니메이션 파형 -->
-        <div id="companionWaveBox" style="display: none; text-align: center; margin: 8px 0;">
-          <div class="voice-waveforms" style="height: 36px; margin: 4px 0;">
+        <div id="companionWaveBox" style="display: none; text-align: center; margin: 8px 0; background: #F0F7EC; border-radius: 14px; padding: 10px;">
+          <div class="voice-waveforms" style="height: 32px; margin: 2px 0;">
             <div class="voice-waveform-bar" style="background-color: #5B7F3E;"></div>
             <div class="voice-waveform-bar" style="background-color: #5B7F3E;"></div>
             <div class="voice-waveform-bar" style="background-color: #5B7F3E;"></div>
             <div class="voice-waveform-bar" style="background-color: #5B7F3E;"></div>
             <div class="voice-waveform-bar" style="background-color: #5B7F3E;"></div>
           </div>
-          <span style="font-size: 12px; font-weight: 700; color: #5B7F3E;">문영 님의 목소리를 경청하고 있어요...</span>
+          <span style="font-size: 13px; font-weight: 700; color: #3D5A2A;">문영 님의 따뜻한 목소리를 듣고 있어요...</span>
         </div>
 
-        <!-- 빠른 질문 추천 칩 -->
-        <div style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-top: 4px; scrollbar-width: none;">
-          <button onclick="askCompanionDirect('오늘 기분 어때?')" class="btn-companion-quick" style="background: #F0F3EE; color: #2C3328; border-color: #D5DDD0;">💬 오늘 기분 어때?</button>
-          <button onclick="askCompanionDirect('온천 여행 보여줘')" class="btn-companion-quick" style="background: #F0F3EE; color: #2C3328; border-color: #D5DDD0;">🧭 온천 여행</button>
-          <button onclick="askCompanionDirect('저염 케어 식단 보여줘')" class="btn-companion-quick" style="background: #F0F3EE; color: #2C3328; border-color: #D5DDD0;">🍲 건강 식단</button>
-          <button onclick="askCompanionDirect('글자 크게 해줘')" class="btn-companion-quick" style="background: #F0F3EE; color: #2C3328; border-color: #D5DDD0;">🔍 글자 크게</button>
-          <button onclick="askCompanionDirect('전화 상담원 연결')" class="btn-companion-quick" style="background: #F0F3EE; color: #2C3328; border-color: #D5DDD0;">📞 전화 상담</button>
+        <!-- 친구와 나누는 따뜻한 대화 주제 칩 (상품 나열 X, 순수 친구 대화 O) -->
+        <div style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; margin-top: 8px; scrollbar-width: none;">
+          <button onclick="askCompanionDirect('오늘 기분 좋은 이야기 들려줘')" class="btn-companion-quick" style="background: #F0F3EE; color: #2C3328; border-color: #D5DDD0;">☀️ 따뜻한 안부 나누기</button>
+          <button onclick="askCompanionDirect('재미있는 옛날이야기 해줘')" class="btn-companion-quick" style="background: #F0F3EE; color: #2C3328; border-color: #D5DDD0;">🌸 정다운 옛날이야기</button>
+          <button onclick="askCompanionDirect('마음 편해지는 건강차 추천해줘')" class="btn-companion-quick" style="background: #F0F3EE; color: #2C3328; border-color: #D5DDD0;">🍵 건강차 추천</button>
+          <button onclick="askCompanionDirect('가벼운 건강 스트레칭 알려줘')" class="btn-companion-quick" style="background: #F0F3EE; color: #2C3328; border-color: #D5DDD0;">🧘 3분 의자 스트레칭</button>
+          <button onclick="askCompanionDirect('가온아, 고마워')" class="btn-companion-quick" style="background: #F0F3EE; color: #2C3328; border-color: #D5DDD0;">💖 가온아 고마워</button>
         </div>
 
-        <!-- 음성 입력 & 텍스트 바 -->
-        <div style="display: flex; gap: 8px; align-items: center; margin-top: 6px;">
-          <button id="companionMicBtn" onclick="triggerCompanionVoice()" class="btn-companion-voice" style="flex: 0 0 54px; height: 54px; padding: 0; border-radius: 50%;">
-            <i class="fa-solid fa-microphone" style="font-size: 20px;"></i>
+        <!-- 음성 대화 버튼 & 텍스트 바 -->
+        <div style="display: flex; gap: 8px; align-items: center; margin-top: 8px;">
+          <button id="companionMicBtn" onclick="triggerCompanionVoice()" class="btn-companion-voice" style="flex: 0 0 54px; height: 54px; padding: 0; border-radius: 50%;" title="음성으로 말씀하기">
+            <i class="fa-solid fa-microphone" style="font-size: 21px;"></i>
           </button>
-          <div style="flex: 1; display: flex; background: #F0F3EE; border: 1.5px solid #D5DDD0; border-radius: 9999px; padding: 6px 14px; align-items: center;">
-            <input type="text" id="companionTextInput" placeholder="말씀하시거나 입력해 주세요..." style="border: none; background: transparent; width: 100%; font-size: 15px; outline: none; font-family: inherit; font-weight: 600; color: #1A1F17;" onkeydown="if(event.key==='Enter') submitCompanionText()">
-            <button onclick="submitCompanionText()" style="background: none; border: none; color: #5B7F3E; font-size: 18px; cursor: pointer; padding: 4px;">
+          <div style="flex: 1; display: flex; background: #F0F3EE; border: 1.5px solid #D5DDD0; border-radius: 9999px; padding: 8px 16px; align-items: center; gap: 8px;">
+            <input type="text" id="companionTextInput" placeholder="친구에게 말하듯 편히 적어보세요..." style="border: none; background: transparent; width: 100%; font-size: 15px; outline: none; font-family: inherit; font-weight: 600; color: #1A1F17;" onkeydown="if(event.key==='Enter') submitCompanionText()">
+            <button onclick="submitCompanionText()" style="background: none; border: none; color: #5B7F3E; font-size: 19px; cursor: pointer; padding: 2px;">
               <i class="fa-solid fa-paper-plane"></i>
             </button>
           </div>

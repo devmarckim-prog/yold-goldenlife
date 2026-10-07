@@ -25,9 +25,11 @@
         <button class="font-scale-btn" onclick="toggleFontScale()" title="글자 크기 변경">
           <i class="fa-solid fa-font"></i> 가+
         </button>
-        <button class="phone-support-btn" data-call-support="케어푸드 전화 신청" style="padding: 8px 12px; font-size: 13px;">
-          <i class="fa-solid fa-phone"></i> 전화신청
-        </button>
+        <a href="mypage.html" class="header-user-btn" aria-label="최문영 님 마이페이지">
+          <i class="fa-solid fa-user"></i>
+          <span>최문영 님</span>
+          <span class="badge-my">마이</span>
+        </a>
       </div>
     </header>
 
@@ -224,30 +226,46 @@
       </button>
     </div>
 
-    <!-- 고정 하단 네비게이션 독 (중앙 대형 플로팅 AI 동반자 버튼) -->
+    <!-- 고정 하단 탭 바 (홈·마이 제외, 핵심 서비스 & 중앙 대형 친구 AI 말동무) -->
     <nav class="bottom-nav">
-      <a href="index.html" class="nav-item">
-        <i class="fa-solid fa-house"></i>
-        <span>홈</span>
-      </a>
       <a href="travel.html" class="nav-item">
         <i class="fa-solid fa-compass"></i>
         <span>여행</span>
       </a>
-      <!-- 중앙 대형 AI 동반자(말동무) 버튼 -->
-      <button onclick="openCompanionModal()" class="nav-companion-btn" data-companion-btn title="AI 말동무 & 음성 컨트롤">
+      <a href="dining.html" class="nav-item">
+        <i class="fa-solid fa-utensils"></i>
+        <span>맛집</span>
+      </a>
+      <!-- 중앙 대형 AI 다정한 동반자(말동무) 버튼 (사각형 잘림 완벽 방지 & 따뜻한 친구 캐릭터) -->
+      <button onclick="openCompanionModal()" class="nav-companion-btn" data-companion-btn title="다정한 말동무 가온과 대화하기">
         <div class="nav-companion-icon-wrap">
-          <i class="fa-solid fa-seedling"></i>
+          <svg viewBox="0 0 44 44" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="18" fill="url(#gNavAvCare)" />
+            <circle cx="22" cy="7" r="2.8" fill="#FFD700" />
+            <path d="M22 9.8V12.5" stroke="#FFD700" stroke-width="1.8" stroke-linecap="round"/>
+            <rect x="9.5" y="13.5" width="25" height="21" rx="10.5" fill="#FFFFFF" />
+            <path d="M14.5 21.5C15.5 20 17.5 20 18.5 21.5" stroke="#3D5A2A" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M25.5 21.5C26.5 20 28.5 20 29.5 21.5" stroke="#3D5A2A" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="14" cy="25.5" r="2.2" fill="#FFAAA6" opacity="0.85"/>
+            <circle cx="30" cy="25.5" r="2.2" fill="#FFAAA6" opacity="0.85"/>
+            <path d="M18 25.5C19.5 28.5 24.5 28.5 26 25.5" stroke="#3D5A2A" stroke-width="1.8" stroke-linecap="round" fill="#FF7B7B"/>
+            <defs>
+              <linearGradient id="gNavAvCare" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#74A84D"/>
+                <stop offset="1" stop-color="#3D5A2A"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
-        <span class="nav-companion-label">AI 동반자</span>
+        <span class="nav-companion-label">AI 말동무</span>
       </button>
       <a href="care_food.html" class="nav-item active">
         <i class="fa-solid fa-bowl-food"></i>
         <span>케어푸드</span>
       </a>
-      <a href="mypage.html" class="nav-item">
-        <i class="fa-regular fa-user"></i>
-        <span>마이</span>
+      <a href="lounge.html" class="nav-item">
+        <i class="fa-solid fa-users"></i>
+        <span>라운지</span>
       </a>
     </nav>
   </div>

@@ -1129,47 +1129,104 @@ button:active, a:active {
 }
 
 /* ------------------------------------------------------------
-   하단 네비게이션 중앙 대형 플로팅 AI 동반자(말동무) 버튼
+   상단 사용자(마이) 프로필 통합 버튼
    ------------------------------------------------------------ */
+.header-user-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #E8F2E0;
+  border: 1.5px solid #C5DEB5;
+  color: #2C3328;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 38px;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 2px 6px rgba(61, 90, 42, 0.12);
+}
+
+.header-user-btn:active {
+  transform: scale(0.96);
+  background: #D4E8C8;
+}
+
+.header-user-btn i {
+  color: #5B7F3E;
+  font-size: 14px;
+}
+
+.header-user-btn span {
+  color: #2C3328;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.header-user-btn .badge-my {
+  background: #5B7F3E;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 9999px;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+/* ------------------------------------------------------------
+   하단 네비게이션 중앙 대형 플로팅 AI 동반자(말동무) 버튼 (잘림 완벽 방지)
+   ------------------------------------------------------------ */
+.bottom-nav {
+  overflow: visible !important;
+}
+
 .nav-companion-btn {
   position: relative;
-  top: -16px;
+  top: -22px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  border: none;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
   cursor: pointer;
-  padding: 0 4px;
-  z-index: 120;
+  padding: 0 4px !important;
+  z-index: 130;
   text-decoration: none;
   flex-shrink: 0;
+  overflow: visible !important; /* 사각형 잘림 원천 방지 */
+  box-shadow: none !important;
 }
 
 .nav-companion-icon-wrap {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #5B7F3E 0%, #3D5A2A 100%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #74A84D 0%, #3D5A2A 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
-  box-shadow: 0 8px 22px rgba(61, 90, 42, 0.42), 0 0 0 4px #ffffff;
+  box-shadow: 0 10px 24px rgba(61, 90, 42, 0.45), 0 0 0 4.5px #ffffff;
   transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation: companion-pulse 3s infinite ease-in-out;
+  overflow: visible !important;
+  position: relative;
 }
 
 @keyframes companion-pulse {
   0%, 100% {
-    box-shadow: 0 8px 20px rgba(61, 90, 42, 0.42), 0 0 0 4px #ffffff;
+    box-shadow: 0 10px 24px rgba(61, 90, 42, 0.45), 0 0 0 4.5px #ffffff;
     transform: translateY(0);
   }
   50% {
-    box-shadow: 0 12px 26px rgba(91, 127, 62, 0.65), 0 0 0 6px rgba(91, 127, 62, 0.25), 0 0 0 4px #ffffff;
-    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 14px 30px rgba(91, 127, 62, 0.7), 0 0 0 7px rgba(91, 127, 62, 0.25), 0 0 0 4.5px #ffffff;
+    transform: translateY(-3px) scale(1.06);
   }
 }
 
@@ -1178,11 +1235,12 @@ button:active, a:active {
 }
 
 .nav-companion-label {
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 800;
   color: #3D5A2A;
-  margin-top: 3px;
-  white-space: nowrap;
+  margin-top: 4px;
+  white-space: nowrap !important;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.8);
 }
 
 /* 첫 페이지 AI 말동무 히어로 카드 */
