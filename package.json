@@ -1,0 +1,18 @@
+{
+  "name": "yold-goldenlife-senior-app",
+  "version": "1.2.0",
+  "description": "골든라이프(Golden Life / YOLD) - Google Stitch 기반 액티브 시니어 O2O 라이프스타일 플랫폼",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "yold",
+    "active-senior",
+    "stitch",
+    "o2o",
+    "lifestyle"
+  ],
+  "author": "Antigravity",
+  "license": "ISC"
+}
